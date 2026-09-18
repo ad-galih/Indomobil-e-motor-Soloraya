@@ -89,7 +89,6 @@
             <!-- Brand Logo -->
             <a href="#" class="flex items-center gap-3">
                 <div class="h-12 w-auto flex items-center justify-center p-1 bg-white rounded-xl shadow-sm border border-slate-100">
-                    <!-- Logo Resmi Indomobil E-Motor -->
                     <img src="1001143440.jpg" alt="Logo Indomobil E-Motor" class="h-10 w-auto object-contain">
                 </div>
                 <div>
@@ -102,7 +101,7 @@
 
             <!-- Desktop Nav Menu -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
-                <a href="#katalog" class="hover:text-brand-600 transition">Pilihan Motor</a>
+                <a href="#katalog" class="hover:text-brand-600 transition">Pilihan Motor & Spesifikasi</a>
                 <a href="#keunggulan" class="hover:text-brand-600 transition">Keunggulan EV</a>
                 <a href="#simulasi" class="hover:text-brand-600 transition">Test Ride & Kredit</a>
                 <a href="#jam-lokasi" class="hover:text-brand-600 transition">Jam Operasional & Lokasi</a>
@@ -275,9 +274,9 @@
     <section id="katalog" class="py-16 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-brand-600 font-extrabold text-xs sm:text-sm tracking-wider uppercase bg-brand-100 px-3 py-1 rounded-full">Katalog Produk Unggulan</span>
+                <span class="text-brand-600 font-extrabold text-xs sm:text-sm tracking-wider uppercase bg-brand-100 px-3 py-1 rounded-full">Katalog & Spesifikasi Resmi</span>
                 <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-3">Jajaran Motor Listrik Indomobil Sragen</h2>
-                <p class="text-slate-600 text-sm sm:text-base mt-2">Pilih unit impian Anda sesuai gaya, kebutuhan, dan anggaran. Garansi resmi Indomobil!</p>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">Pilih unit impian Anda sesuai gaya, kebutuhan, dan spesifikasi performa. Garansi resmi Indomobil!</p>
                 
                 <!-- Filter Buttons -->
                 <div class="flex flex-wrap justify-center gap-2 mt-6" id="catalog-filters">
@@ -291,7 +290,7 @@
             <!-- Dynamic Grid Items for Motor Listrik -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="catalog-grid">
                 
-                <!-- 1. QT -->
+                <!-- 1. INDOMOBIL QT -->
                 <div class="motor-card city bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-md hover:shadow-2xl transition duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative h-80 overflow-hidden bg-slate-950 flex items-center justify-center cursor-pointer" onclick="openImageModal('1001203809.png', 'Indomobil QT')">
@@ -302,23 +301,65 @@
                             <span class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Entry Favorite</span>
                             
                             <button class="absolute bottom-4 right-4 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition">
-                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Full Poster
+                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Poster
                             </button>
                         </div>
-                        <div class="p-6 space-y-3">
+
+                        <div class="p-6 space-y-4">
                             <div class="flex justify-between items-center">
-                                <h3 class="font-extrabold text-xl text-slate-900">Indomobil QT</h3>
-                                <span class="text-xs font-bold text-brand-600">Rp 15.350.000</span>
+                                <div>
+                                    <h3 class="font-extrabold text-xl text-slate-900">Indomobil QT</h3>
+                                    <p class="text-[11px] text-slate-500 font-medium">Skuter Komuter Kompak Entry-Level</p>
+                                </div>
+                                <span class="text-xs font-extrabold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">Rp 15.350.000</span>
                             </div>
+
                             <p class="text-slate-600 text-xs leading-relaxed">
-                                Motor listrik compact dengan posisi berkendara nyaman, perawatan super hemat, mampu menempuh jarak hingga 70km dan baterai efisien untuk perjalanan harian Sragen.
+                                Skuter komuter kompak entry-level yang sangat cocok untuk mobilitas harian jarak dekat di area perkotaan Sragen.
                             </p>
-                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-1">
-                                <div class="flex justify-between text-slate-600"><span>Desain:</span><span class="font-semibold text-slate-800">Classic Compact Scooter</span></div>
-                                <div class="flex justify-between text-slate-600"><span>Penggunaan:</span><span class="font-semibold text-slate-800">Komuter Harian & Perkotaan</span></div>
+
+                            <!-- Key Specs Grid -->
+                            <div class="grid grid-cols-2 gap-2 text-[11px]">
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Daya Motor</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-bolt text-amber-500 mr-1"></i>2 kW</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Baterai</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-battery-half text-emerald-500 mr-1"></i>Single Lithium (60V 24Ah)</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Jarak Tempuh</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-route text-blue-500 mr-1"></i>s.d. 70 km</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Kecepatan Maks</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-gauge-high text-rose-500 mr-1"></i>60 km/jam</span>
+                                </div>
                             </div>
+
+                            <!-- Expandable Detailed Specs -->
+                            <details class="group/spec text-xs">
+                                <summary class="cursor-pointer font-bold text-brand-600 flex items-center justify-between py-1 hover:text-brand-800">
+                                    <span><i class="fa-solid fa-list-check mr-1.5"></i>Lihat Rincian Spesifikasi Lengkap</span>
+                                    <i class="fa-solid fa-chevron-down group-open/spec:rotate-180 transition"></i>
+                                </summary>
+                                <div class="mt-2 space-y-2 pt-2 border-t border-slate-200 text-slate-600 text-[11px]">
+                                    <div class="flex justify-between"><span>Berat Kosong:</span><span class="font-semibold text-slate-800">82,5 kg</span></div>
+                                    <div class="flex justify-between"><span>Ukuran Ban:</span><span class="font-semibold text-slate-800">Depan 90/80-12, Belakang 110/70-12</span></div>
+                                    <div class="flex justify-between"><span>Pengereman:</span><span class="font-semibold text-slate-800">Cakram Depan & Belakang</span></div>
+                                    <div class="pt-1 font-bold text-slate-800">Fitur Utama:</div>
+                                    <ul class="list-disc pl-4 space-y-1 text-slate-600 text-[11px]">
+                                        <li>NFC Smart Key</li>
+                                        <li>IP67 Waterproof Rating</li>
+                                        <li>Reverse Mode & Push Assist</li>
+                                        <li>Full LED Lighting System</li>
+                                    </ul>
+                                </div>
+                            </details>
                         </div>
                     </div>
+
                     <div class="p-6 pt-0 space-y-2">
                         <a href="https://wa.me/6285740121640?text=Halo%20Mas%20Galih,%20saya%20tertarik%20dengan%20Indomobil%20QT%20(Rp%2015.350.000).%20Bisa%20minta%20info%20promo%20dan%20kreditnya?" 
                            target="_blank" 
@@ -328,7 +369,7 @@
                     </div>
                 </div>
 
-                <!-- 2. QT PRO -->
+                <!-- 2. INDOMOBIL QT PRO -->
                 <div class="motor-card city bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-md hover:shadow-2xl transition duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative h-80 overflow-hidden bg-slate-950 flex items-center justify-center cursor-pointer" onclick="openImageModal('1001203813.png', 'Indomobil QT Pro')">
@@ -336,26 +377,67 @@
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 opacity-90 group-hover:opacity-60 transition"></div>
                             
                             <span class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-extrabold px-3 py-1 rounded-full shadow-lg">Rp 19.150.000</span>
-                            <span class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-emerald-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Best Value</span>
+                            <span class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-emerald-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Dual Battery</span>
 
                             <button class="absolute bottom-4 right-4 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition">
-                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Full Poster
+                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Poster
                             </button>
                         </div>
-                        <div class="p-6 space-y-3">
+
+                        <div class="p-6 space-y-4">
                             <div class="flex justify-between items-center">
-                                <h3 class="font-extrabold text-xl text-slate-900">Indomobil QT Pro</h3>
-                                <span class="text-xs font-bold text-brand-600">Rp 19.150.000</span>
+                                <div>
+                                    <h3 class="font-extrabold text-xl text-slate-900">Indomobil QT Pro</h3>
+                                    <p class="text-[11px] text-slate-500 font-medium">Varian Pro Baterai Ganda Jangkauan Jauh</p>
+                                </div>
+                                <span class="text-xs font-extrabold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">Rp 19.150.000</span>
                             </div>
+
                             <p class="text-slate-600 text-xs leading-relaxed">
-                                Varian Pro dengan paduan warna dual-tone ikonik, dua baterai, jarak tempuh hingga 135km, fitur keamanan lengkap, serta akselerasi responsif untuk anak muda & keluarga.
+                                Varian tingkat lanjut dari seri QT dengan kapasitas baterai ganda untuk jangkauan perjalanan yang lebih jauh.
                             </p>
-                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-1">
-                                <div class="flex justify-between text-slate-600"><span>Keunggulan:</span><span class="font-semibold text-slate-800">Desain 2-Tone Trendy</span></div>
-                                <div class="flex justify-between text-slate-600"><span>Garansi:</span><span class="font-semibold text-slate-800">Resmi Indomobil</span></div>
+
+                            <!-- Key Specs Grid -->
+                            <div class="grid grid-cols-2 gap-2 text-[11px]">
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Daya Motor</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-bolt text-amber-500 mr-1"></i>2 kW</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Baterai</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-battery-full text-emerald-500 mr-1"></i>Dual Lithium (2,88/2,45 kWh)</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Jarak Tempuh</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-route text-blue-500 mr-1"></i>100 km – 135 km</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Kecepatan Maks</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-gauge-high text-rose-500 mr-1"></i>70 km/jam</span>
+                                </div>
                             </div>
+
+                            <!-- Expandable Detailed Specs -->
+                            <details class="group/spec text-xs">
+                                <summary class="cursor-pointer font-bold text-brand-600 flex items-center justify-between py-1 hover:text-brand-800">
+                                    <span><i class="fa-solid fa-list-check mr-1.5"></i>Lihat Rincian Spesifikasi Lengkap</span>
+                                    <i class="fa-solid fa-chevron-down group-open/spec:rotate-180 transition"></i>
+                                </summary>
+                                <div class="mt-2 space-y-2 pt-2 border-t border-slate-200 text-slate-600 text-[11px]">
+                                    <div class="flex justify-between"><span>Berat Kosong:</span><span class="font-semibold text-slate-800">95,7 kg</span></div>
+                                    <div class="flex justify-between"><span>Ukuran Ban:</span><span class="font-semibold text-slate-800">Depan 100/80-12, Belakang 110/70-12</span></div>
+                                    <div class="pt-1 font-bold text-slate-800">Fitur Utama:</div>
+                                    <ul class="list-disc pl-4 space-y-1 text-slate-600 text-[11px]">
+                                        <li>TFT Digital Display & Two-Tone Color</li>
+                                        <li>Traction Control System (TCS)</li>
+                                        <li>Hill Start Assist & Regenerative Braking</li>
+                                        <li>Adjustable Rear Suspension & NFC Smart Key</li>
+                                    </ul>
+                                </div>
+                            </details>
                         </div>
                     </div>
+
                     <div class="p-6 pt-0 space-y-2">
                         <a href="https://wa.me/6285740121640?text=Halo%20Mas%20Galih,%20saya%20tertarik%20dengan%20Indomobil%20QT%20Pro%20(Rp%2019.150.000).%20Bisa%20info%20skema%20kredit%20dan%20pilihan%20warna?" 
                            target="_blank" 
@@ -365,7 +447,7 @@
                     </div>
                 </div>
 
-                <!-- 3. ADORA -->
+                <!-- 3. INDOMOBIL ADORA -->
                 <div class="motor-card sport bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-md hover:shadow-2xl transition duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative h-80 overflow-hidden bg-slate-950 flex items-center justify-center cursor-pointer" onclick="openImageModal('1001203811.png', 'Indomobil Adora')">
@@ -373,26 +455,67 @@
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 opacity-90 group-hover:opacity-60 transition"></div>
                             
                             <span class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-extrabold px-3 py-1 rounded-full shadow-lg">Rp 25.300.000</span>
-                            <span class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-cyan-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Comfort Choice</span>
+                            <span class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-cyan-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Retro Modern</span>
 
                             <button class="absolute bottom-4 right-4 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition">
-                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Full Poster
+                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Poster
                             </button>
                         </div>
-                        <div class="p-6 space-y-3">
+
+                        <div class="p-6 space-y-4">
                             <div class="flex justify-between items-center">
-                                <h3 class="font-extrabold text-xl text-slate-900">Indomobil Adora</h3>
-                                <span class="text-xs font-bold text-brand-600">Rp 25.300.000</span>
+                                <div>
+                                    <h3 class="font-extrabold text-xl text-slate-900">Indomobil Adora</h3>
+                                    <p class="text-[11px] text-slate-500 font-medium">Skuter Bergaya Retro-Modern Ergonomis</p>
+                                </div>
+                                <span class="text-xs font-extrabold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">Rp 25.300.000</span>
                             </div>
+
                             <p class="text-slate-600 text-xs leading-relaxed">
-                                Skuter listrik futuristik berukuran proporsional dengan stabilitas tinggi, pencahayaan LED tajam, serta kenyamanan berkendara jarak jauh hingga 110km.
+                                Skuter listrik bergaya retro-modern dengan posisi berkendara ergonomis dan kenyamanan ekstra.
                             </p>
-                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-1">
-                                <div class="flex justify-between text-slate-600"><span>Kenyamanan:</span><span class="font-semibold text-slate-800">Jok Ergonomis & Dek Luas</span></div>
-                                <div class="flex justify-between text-slate-600"><span>Fitur:</span><span class="font-semibold text-slate-800">Digital Panel & LED Futuristic</span></div>
+
+                            <!-- Key Specs Grid -->
+                            <div class="grid grid-cols-2 gap-2 text-[11px]">
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Daya Motor</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-bolt text-amber-500 mr-1"></i>3 kW</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Baterai</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-battery-three-quarters text-emerald-500 mr-1"></i>Lithium-ion</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Jarak Tempuh</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-route text-blue-500 mr-1"></i>100 km – 110 km</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Kecepatan Maks</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-gauge-high text-rose-500 mr-1"></i>65 – 70 km/jam</span>
+                                </div>
                             </div>
+
+                            <!-- Expandable Detailed Specs -->
+                            <details class="group/spec text-xs">
+                                <summary class="cursor-pointer font-bold text-brand-600 flex items-center justify-between py-1 hover:text-brand-800">
+                                    <span><i class="fa-solid fa-list-check mr-1.5"></i>Lihat Rincian Spesifikasi Lengkap</span>
+                                    <i class="fa-solid fa-chevron-down group-open/spec:rotate-180 transition"></i>
+                                </summary>
+                                <div class="mt-2 space-y-2 pt-2 border-t border-slate-200 text-slate-600 text-[11px]">
+                                    <div class="flex justify-between"><span>Roda / Ban:</span><span class="font-semibold text-slate-800">Velg Ring 12 inci</span></div>
+                                    <div class="flex justify-between"><span>Pengereman:</span><span class="font-semibold text-slate-800">Disc Brake Depan & Belakang</span></div>
+                                    <div class="pt-1 font-bold text-slate-800">Fitur Utama:</div>
+                                    <ul class="list-disc pl-4 space-y-1 text-slate-600 text-[11px]">
+                                        <li>Modern-Classic LED Headlamp</li>
+                                        <li>Digital Speedometer & Keyless System</li>
+                                        <li>Bagasi Bawah Jok Sangat Luas</li>
+                                        <li>Reverse Gear & USB Charger Port</li>
+                                    </ul>
+                                </div>
+                            </details>
                         </div>
                     </div>
+
                     <div class="p-6 pt-0 space-y-2">
                         <a href="https://wa.me/6285740121640?text=Halo%20Mas%20Galih,%20saya%20mau%20tanya%20detail%20Indomobil%20Adora%20(Rp%2025.300.000).%20Apakah%20unit%20ready%20di%20dealer%20Sragen?" 
                            target="_blank" 
@@ -402,7 +525,7 @@
                     </div>
                 </div>
 
-                <!-- 4. SPRINTO -->
+                <!-- 4. INDOMOBIL SPRINTO -->
                 <div class="motor-card sport bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-md hover:shadow-2xl transition duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative h-80 overflow-hidden bg-slate-950 flex items-center justify-center cursor-pointer" onclick="openImageModal('1001203814.png', 'Indomobil Sprinto')">
@@ -413,23 +536,65 @@
                             <span class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Sport Series</span>
 
                             <button class="absolute bottom-4 right-4 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition">
-                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Full Poster
+                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Poster
                             </button>
                         </div>
-                        <div class="p-6 space-y-3">
+
+                        <div class="p-6 space-y-4">
                             <div class="flex justify-between items-center">
-                                <h3 class="font-extrabold text-xl text-slate-900">Indomobil Sprinto</h3>
-                                <span class="text-xs font-bold text-brand-600">Rp 26.100.000</span>
+                                <div>
+                                    <h3 class="font-extrabold text-xl text-slate-900">Indomobil Sprinto</h3>
+                                    <p class="text-[11px] text-slate-500 font-medium">Model Sporty Aerodinamis & Responsif</p>
+                                </div>
+                                <span class="text-xs font-extrabold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">Rp 26.100.000</span>
                             </div>
+
                             <p class="text-slate-600 text-xs leading-relaxed">
-                                Desain sudut tajam yang terinspirasi dari motor balap urban. Akselerasi gesit dengan manuver lincah untuk lalu lintas perkotaan dengan jarak maksimum hingga 110km.
+                                Model sporty berdesain tajam dan dinamis dengan tenaga responsif (Torsi melimpah 195 Nm).
                             </p>
-                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-1">
-                                <div class="flex justify-between text-slate-600"><span>Karakter:</span><span class="font-semibold text-slate-800">Sporty & Aggressive Look</span></div>
-                                <div class="flex justify-between text-slate-600"><span>Performa:</span><span class="font-semibold text-slate-800">Akselerasi Responsif</span></div>
+
+                            <!-- Key Specs Grid -->
+                            <div class="grid grid-cols-2 gap-2 text-[11px]">
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Daya Motor</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-bolt text-amber-500 mr-1"></i>3,5 kW (195 Nm)</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Baterai</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-battery-full text-emerald-500 mr-1"></i>Lithium 2,45 kWh</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Jarak Tempuh</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-route text-blue-500 mr-1"></i>s.d. 110 km</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Kecepatan Maks</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-gauge-high text-rose-500 mr-1"></i>75 – 80 km/jam</span>
+                                </div>
                             </div>
+
+                            <!-- Expandable Detailed Specs -->
+                            <details class="group/spec text-xs">
+                                <summary class="cursor-pointer font-bold text-brand-600 flex items-center justify-between py-1 hover:text-brand-800">
+                                    <span><i class="fa-solid fa-list-check mr-1.5"></i>Lihat Rincian Spesifikasi Lengkap</span>
+                                    <i class="fa-solid fa-chevron-down group-open/spec:rotate-180 transition"></i>
+                                </summary>
+                                <div class="mt-2 space-y-2 pt-2 border-t border-slate-200 text-slate-600 text-[11px]">
+                                    <div class="flex justify-between"><span>Dimensi (PxLxT):</span><span class="font-semibold text-slate-800">1.980 × 745 × 1.115 mm</span></div>
+                                    <div class="flex justify-between"><span>Tinggi Jok / GC:</span><span class="font-semibold text-slate-800">770 mm / 150 mm</span></div>
+                                    <div class="flex justify-between"><span>Ukuran Ban:</span><span class="font-semibold text-slate-800">Depan 90/90-14, Belakang 100/80-14</span></div>
+                                    <div class="pt-1 font-bold text-slate-800">Fitur Utama:</div>
+                                    <ul class="list-disc pl-4 space-y-1 text-slate-600 text-[11px]">
+                                        <li>Bodi Aerodinamis Sporty Look</li>
+                                        <li>Disc Brake Depan & Belakang</li>
+                                        <li>Telescopic Fork & Coil Spring Suspension</li>
+                                        <li>Digital Instrument Cluster</li>
+                                    </ul>
+                                </div>
+                            </details>
                         </div>
                     </div>
+
                     <div class="p-6 pt-0 space-y-2">
                         <a href="https://wa.me/6285740121640?text=Halo%20Mas%20Galih,%20saya%20tertarik%20dengan%20Indomobil%20Sprinto%20(Rp%2026.100.000).%20Bisa%20diaturkan%20jadwal%20test%20ride?" 
                            target="_blank" 
@@ -439,7 +604,7 @@
                     </div>
                 </div>
 
-                <!-- 5. TYRANNO -->
+                <!-- 5. INDOMOBIL TYRANNO -->
                 <div class="motor-card adventure bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-md hover:shadow-2xl transition duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative h-80 overflow-hidden bg-slate-950 flex items-center justify-center cursor-pointer" onclick="openImageModal('1001203812.png', 'Indomobil Tyranno')">
@@ -450,23 +615,65 @@
                             <span class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-orange-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Adventure Tough</span>
 
                             <button class="absolute bottom-4 right-4 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition">
-                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Full Poster
+                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Poster
                             </button>
                         </div>
-                        <div class="p-6 space-y-3">
+
+                        <div class="p-6 space-y-4">
                             <div class="flex justify-between items-center">
-                                <h3 class="font-extrabold text-xl text-slate-900">Indomobil Tyranno</h3>
-                                <span class="text-xs font-bold text-brand-600">Rp 27.100.000</span>
+                                <div>
+                                    <h3 class="font-extrabold text-xl text-slate-900">Indomobil Tyranno</h3>
+                                    <p class="text-[11px] text-slate-500 font-medium">Motor Listrik Crossover Adventure</p>
+                                </div>
+                                <span class="text-xs font-extrabold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">Rp 27.100.000</span>
                             </div>
+
                             <p class="text-slate-600 text-xs leading-relaxed">
-                                Motor listrik bertema petualangan dengan kompartemen & crash bar kokoh. Siap melibas tantangan jalan perkotaan hingga pedesaan dengan jarak tempuh hingga 110km.
+                                Motor listrik bergaya adventure/crossover tangguh untuk berbagai kondisi medan jalan perkotaan maupun pedesaan.
                             </p>
-                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-1">
-                                <div class="flex justify-between text-slate-600"><span>Bodi:</span><span class="font-semibold text-slate-800">Tangguh & Crossover Look</span></div>
-                                <div class="flex justify-between text-slate-600"><span>Suspensi:</span><span class="font-semibold text-slate-800">Resisten Berbagai Medan</span></div>
+
+                            <!-- Key Specs Grid -->
+                            <div class="grid grid-cols-2 gap-2 text-[11px]">
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Daya Motor</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-bolt text-amber-500 mr-1"></i>3 kW (180 Nm)</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Baterai</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-battery-full text-emerald-500 mr-1"></i>Lithium 2,45 kWh</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Jarak Tempuh</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-route text-blue-500 mr-1"></i>s.d. 110 km</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 block text-[10px]">Kecepatan Maks</span>
+                                    <span class="font-extrabold text-slate-800"><i class="fa-solid fa-gauge-high text-rose-500 mr-1"></i>80 km/jam</span>
+                                </div>
                             </div>
+
+                            <!-- Expandable Detailed Specs -->
+                            <details class="group/spec text-xs">
+                                <summary class="cursor-pointer font-bold text-brand-600 flex items-center justify-between py-1 hover:text-brand-800">
+                                    <span><i class="fa-solid fa-list-check mr-1.5"></i>Lihat Rincian Spesifikasi Lengkap</span>
+                                    <i class="fa-solid fa-chevron-down group-open/spec:rotate-180 transition"></i>
+                                </summary>
+                                <div class="mt-2 space-y-2 pt-2 border-t border-slate-200 text-slate-600 text-[11px]">
+                                    <div class="flex justify-between"><span>Dimensi & Berat:</span><span class="font-semibold text-slate-800">1.885 × 755 × 1.150 mm, 114,5 kg</span></div>
+                                    <div class="flex justify-between"><span>Ground Clearance:</span><span class="font-semibold text-slate-800">170 mm</span></div>
+                                    <div class="flex justify-between"><span>Ukuran Ban:</span><span class="font-semibold text-slate-800">Depan 110/70-12, Belakang 120/70-12</span></div>
+                                    <div class="pt-1 font-bold text-slate-800">Fitur Utama:</div>
+                                    <ul class="list-disc pl-4 space-y-1 text-slate-600 text-[11px]">
+                                        <li>Stang Tinggi Khas Adventure</li>
+                                        <li>Dual Shock Rear + Dual Swing Arm</li>
+                                        <li>All-Terrain Tyre Resisten Segala Medan</li>
+                                        <li>High Ground Clearance 170mm</li>
+                                    </ul>
+                                </div>
+                            </details>
                         </div>
                     </div>
+
                     <div class="p-6 pt-0 space-y-2">
                         <a href="https://wa.me/6285740121640?text=Halo%20Mas%20Galih,%20saya%20berminat%20dengan%20Indomobil%20Tyranno%20(Rp%2027.100.000).%20Bisa%20info%20diskon%20terbaru?" 
                            target="_blank" 
@@ -476,7 +683,7 @@
                     </div>
                 </div>
 
-                <!-- 6. TYRANNO X (COMING SOON) -->
+                <!-- 6. INDOMOBIL TYRANNO X -->
                 <div class="motor-card adventure bg-white rounded-3xl overflow-hidden border-2 border-amber-400 shadow-xl hover:shadow-2xl transition duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative h-80 overflow-hidden bg-slate-950 flex items-center justify-center cursor-pointer" onclick="openImageModal('1001203810.png', 'Indomobil Tyranno X')">
@@ -487,23 +694,65 @@
                             <span class="absolute top-4 left-4 bg-rose-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow">FLAGSHIP SERIES</span>
 
                             <button class="absolute bottom-4 right-4 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition">
-                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Full Poster
+                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Poster
                             </button>
                         </div>
-                        <div class="p-6 space-y-3">
+
+                        <div class="p-6 space-y-4">
                             <div class="flex justify-between items-center">
-                                <h3 class="font-extrabold text-xl text-slate-900">Indomobil Tyranno X</h3>
-                                <span class="text-xs font-extrabold text-amber-600 uppercase bg-amber-100 px-2 py-1 rounded">Coming Soon</span>
+                                <div>
+                                    <h3 class="font-extrabold text-xl text-slate-900">Indomobil Tyranno X</h3>
+                                    <p class="text-[11px] text-amber-700 font-extrabold">Flagship Adventure Premium</p>
+                                </div>
+                                <span class="text-xs font-extrabold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-lg">Coming Soon</span>
                             </div>
+
                             <p class="text-slate-600 text-xs leading-relaxed">
-                                Kasta tertinggi dari varian Tyranno. Dilengkapi dengan livery camo/gold eksklusif, windshield adventure, dan spesifikasi baterai premium. Segera hadir di Dealer Sragen!
+                                Varian flagship adventure premium dengan peningkatan performa, baterai monster 3,456 kWh (Jarak 160 km), dan fitur elektronik modern.
                             </p>
-                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs space-y-1">
-                                <div class="flex justify-between text-slate-700"><span>Kelas:</span><span class="font-extrabold text-slate-900">Flagship Ultimate Crossover</span></div>
-                                <div class="flex justify-between text-slate-700"><span>Status:</span><span class="font-extrabold text-amber-700">Segera Hadir / Pre-Order</span></div>
+
+                            <!-- Key Specs Grid -->
+                            <div class="grid grid-cols-2 gap-2 text-[11px]">
+                                <div class="bg-amber-50/60 p-2.5 rounded-xl border border-amber-200">
+                                    <span class="text-slate-500 block text-[10px]">Daya Motor</span>
+                                    <span class="font-extrabold text-slate-900"><i class="fa-solid fa-bolt text-amber-500 mr-1"></i>3 kW (180 Nm)</span>
+                                </div>
+                                <div class="bg-amber-50/60 p-2.5 rounded-xl border border-amber-200">
+                                    <span class="text-slate-500 block text-[10px]">Baterai</span>
+                                    <span class="font-extrabold text-slate-900"><i class="fa-solid fa-battery-full text-emerald-600 mr-1"></i>Lithium 3,456 kWh</span>
+                                </div>
+                                <div class="bg-amber-50/60 p-2.5 rounded-xl border border-amber-200">
+                                    <span class="text-slate-500 block text-[10px]">Jarak Tempuh</span>
+                                    <span class="font-extrabold text-slate-900"><i class="fa-solid fa-route text-blue-600 mr-1"></i>s.d. 160 km</span>
+                                </div>
+                                <div class="bg-amber-50/60 p-2.5 rounded-xl border border-amber-200">
+                                    <span class="text-slate-500 block text-[10px]">Kecepatan Maks</span>
+                                    <span class="font-extrabold text-slate-900"><i class="fa-solid fa-gauge-high text-rose-600 mr-1"></i>80 km/jam</span>
+                                </div>
                             </div>
+
+                            <!-- Expandable Detailed Specs -->
+                            <details class="group/spec text-xs">
+                                <summary class="cursor-pointer font-bold text-amber-700 flex items-center justify-between py-1 hover:text-amber-900">
+                                    <span><i class="fa-solid fa-list-check mr-1.5"></i>Lihat Rincian Fitur Eksklusif Flagship</span>
+                                    <i class="fa-solid fa-chevron-down group-open/spec:rotate-180 transition"></i>
+                                </summary>
+                                <div class="mt-2 space-y-2 pt-2 border-t border-amber-200 text-slate-600 text-[11px]">
+                                    <div class="flex justify-between"><span>Dimensi & Berat:</span><span class="font-semibold text-slate-800">1.940 × 785 × 1.283 mm, 125,6 kg</span></div>
+                                    <div class="flex justify-between"><span>Ground Clearance:</span><span class="font-semibold text-slate-800">170 mm</span></div>
+                                    <div class="flex justify-between"><span>Ukuran Ban:</span><span class="font-semibold text-slate-800">Depan 110/70-13, Belakang 120/70-12</span></div>
+                                    <div class="pt-1 font-bold text-slate-900">Fitur Eksklusif Flagship:</div>
+                                    <ul class="list-disc pl-4 space-y-1 text-slate-700 text-[11px]">
+                                        <li>TFT Touchscreen Display & Smart Inclinometer</li>
+                                        <li>Traction Control System (TCS) & Cruise Control</li>
+                                        <li>Exo-Armor Body Protection & Dual Bi-Beam LED</li>
+                                        <li>Multi-Functional Rack (Kapasitas s.d. 50 kg)</li>
+                                    </ul>
+                                </div>
+                            </details>
                         </div>
                     </div>
+
                     <div class="p-6 pt-0 space-y-2">
                         <a href="https://wa.me/6285740121640?text=Halo%20Mas%20Galih,%20saya%20tertarik%20dengan%20Flagship%20Indomobil%20Tyranno%20X%20(Coming%20Soon).%20Mohon%20info%20estimasi%20peluncuran%20dan%20indent-nya" 
                            target="_blank" 
@@ -839,7 +1088,6 @@
                 <div class="md:col-span-2 space-y-4">
                     <div class="flex items-center gap-3">
                         <div class="h-10 w-auto flex items-center justify-center p-1 bg-white rounded-lg">
-                            <!-- Logo Resmi Indomobil E-Motor -->
                             <img src="1001143440.jpg" alt="Logo Indomobil E-Motor" class="h-8 w-auto object-contain">
                         </div>
                         <span class="font-extrabold text-xl text-white">Indomobil E-Motor Sragen</span>
