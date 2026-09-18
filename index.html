@@ -193,41 +193,57 @@
                         
                         <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-slate-900 border border-slate-700">
                             <!-- Hero Scooter Visual Banner -->
-                            <div class="relative bg-gradient-to-b from-slate-800 to-slate-900 p-6 text-center">
-                                <div class="inline-block bg-brand-600 text-white font-extrabold text-xs px-3 py-1 rounded-full mb-3">
-                                    MODEL UNGGULAN 2026
+                            <div class="relative bg-gradient-to-b from-slate-800 to-slate-900 p-4 text-center">
+                                <div class="inline-block bg-brand-600 text-white font-extrabold text-xs px-3 py-1 rounded-full mb-2">
+                                    LINEUP MOTOR LISTRIK INDOMOBIL 2026
                                 </div>
-                                <h3 class="text-2xl font-extrabold text-white">INDOMOBIL E-MOTOR</h3>
-                                <p class="text-xs text-slate-400 mt-1">Solusi Ramah Lingkungan & Hemat Operasional</p>
+                                <h3 class="text-xl font-extrabold text-white">INDOMOBIL E-MOTOR SRAGEN</h3>
+                                <p class="text-xs text-slate-400 mt-0.5">Solusi Ramah Lingkungan & Hemat Operasional</p>
 
-                                <div class="my-6 relative py-4 bg-slate-800/60 rounded-2xl border border-slate-700 flex items-center justify-center">
-                                    <div class="text-center">
-                                        <i class="fa-solid fa-motorcycle text-6xl text-brand-500 mb-2 animate-pulse"></i>
-                                        <div class="text-xs font-bold text-amber-400">PILIHAN TYPE LENGKAP</div>
-                                        <div class="text-sm font-extrabold text-white mt-1">QT • QT PRO • ADORA • SPRINTO • TYRANNO</div>
+                                <!-- Interactive Poster Preview Carousel in Hero -->
+                                <div class="my-4 relative rounded-2xl overflow-hidden border border-slate-700 aspect-[9/16] max-h-80 mx-auto shadow-inner bg-slate-950">
+                                    <img id="hero-poster-img" src="1001203809.png" alt="Indomobil QT" class="w-full h-full object-cover transition-opacity duration-500 cursor-pointer" onclick="openImageModal(this.src, 'Indomobil E-Motor')">
+                                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-3 text-left flex justify-between items-end">
+                                        <div>
+                                            <span class="text-[10px] text-amber-400 font-bold block uppercase tracking-wider">Model Terpopuler</span>
+                                            <span id="hero-poster-title" class="text-white font-extrabold text-sm">Indomobil QT (Rp 15 Jt-an)</span>
+                                        </div>
+                                        <button onclick="openImageModal(document.getElementById('hero-poster-img').src, document.getElementById('hero-poster-title').innerText)" class="bg-white/20 hover:bg-white/40 backdrop-blur-md text-white p-2 rounded-lg text-xs">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </button>
                                     </div>
+                                </div>
+
+                                <!-- Quick Thumbnail Selector -->
+                                <div class="flex justify-center gap-1.5 overflow-x-auto py-1">
+                                    <img src="1001203809.png" alt="QT" onclick="switchHeroPoster('1001203809.png', 'Indomobil QT (Rp 15 Jt-an)')" class="w-10 h-14 object-cover rounded-lg border-2 border-amber-400 cursor-pointer hover:scale-105 transition thumbnail-btn">
+                                    <img src="1001203813.png" alt="QT Pro" onclick="switchHeroPoster('1001203813.png', 'Indomobil QT Pro (Rp 19 Jt-an)')" class="w-10 h-14 object-cover rounded-lg border-2 border-transparent hover:border-amber-400 cursor-pointer hover:scale-105 transition thumbnail-btn">
+                                    <img src="1001203811.png" alt="Adora" onclick="switchHeroPoster('1001203811.png', 'Indomobil Adora (Rp 25 Jt-an)')" class="w-10 h-14 object-cover rounded-lg border-2 border-transparent hover:border-amber-400 cursor-pointer hover:scale-105 transition thumbnail-btn">
+                                    <img src="1001203814.png" alt="Sprinto" onclick="switchHeroPoster('1001203814.png', 'Indomobil Sprinto (Rp 26 Jt-an)')" class="w-10 h-14 object-cover rounded-lg border-2 border-transparent hover:border-amber-400 cursor-pointer hover:scale-105 transition thumbnail-btn">
+                                    <img src="1001203812.png" alt="Tyranno" onclick="switchHeroPoster('1001203812.png', 'Indomobil Tyranno (Rp 27 Jt-an)')" class="w-10 h-14 object-cover rounded-lg border-2 border-transparent hover:border-amber-400 cursor-pointer hover:scale-105 transition thumbnail-btn">
+                                    <img src="1001203810.png" alt="Tyranno X" onclick="switchHeroPoster('1001203810.png', 'Indomobil Tyranno X (Rp 33 Jt-an)')" class="w-10 h-14 object-cover rounded-lg border-2 border-transparent hover:border-amber-400 cursor-pointer hover:scale-105 transition thumbnail-btn">
                                 </div>
                             </div>
                             
-                            <div class="p-6 space-y-4 bg-slate-900">
-                                <div class="p-4 bg-slate-800/80 rounded-2xl border border-slate-700 text-xs space-y-2">
-                                    <div class="flex justify-between items-center pb-2 border-b border-slate-700">
+                            <div class="p-5 space-y-3 bg-slate-900">
+                                <div class="p-3 bg-slate-800/80 rounded-xl border border-slate-700 text-xs space-y-1.5">
+                                    <div class="flex justify-between items-center pb-1.5 border-b border-slate-700">
                                         <span class="text-slate-400">Dealer Resmi:</span>
                                         <span class="font-bold text-white">Indomobil E-Motor Sragen</span>
                                     </div>
-                                    <div class="flex justify-between items-center pb-2 border-b border-slate-700">
-                                        <span class="text-slate-400">Sales Consultant:</span>
+                                    <div class="flex justify-between items-center pb-1.5 border-b border-slate-700">
+                                        <span class="text-slate-400">Sales Representative:</span>
                                         <span class="font-bold text-emerald-400">Galih Pratignyo</span>
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-slate-400">Direct WhatsApp:</span>
+                                        <span class="text-slate-400">Direct Contact:</span>
                                         <span class="font-bold text-amber-400">0857-4012-1640</span>
                                     </div>
                                 </div>
 
                                 <a href="https://wa.me/6285740121640?text=Halo%20Mas%20Galih,%20saya%20ingin%20booking%20jadwal%20Test%20Ride%20di%20Dealer%20Indomobil%20E-Motor%20Sragen" 
                                    target="_blank"
-                                   class="w-full py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white text-center font-extrabold text-sm rounded-xl transition block shadow-lg shadow-emerald-500/20">
+                                   class="w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-white text-center font-extrabold text-sm rounded-xl transition block shadow-lg shadow-emerald-500/20">
                                     <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Booking Test Ride / Chat Galih
                                 </a>
                             </div>
@@ -277,27 +293,29 @@
                 <!-- 1. QT -->
                 <div class="motor-card city bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-md hover:shadow-2xl transition duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="relative h-64 overflow-hidden bg-slate-900 flex items-center justify-center p-4">
-                            <!-- High aesthetic motor visual block -->
-                            <div class="text-center space-y-2">
-                                <span class="text-rose-500 font-black text-4xl tracking-tighter block group-hover:scale-110 transition duration-300">QT</span>
-                                <span class="bg-rose-500/20 text-rose-300 text-[11px] font-bold px-3 py-1 rounded-full inline-block border border-rose-500/30">Classic & Compact City Scooter</span>
-                                <p class="text-slate-400 text-xs px-4">Desain retro elegan, lincah untuk perkotaan dan konsumsi harian.</p>
-                            </div>
+                        <div class="relative h-80 overflow-hidden bg-slate-950 flex items-center justify-center cursor-pointer" onclick="openImageModal('1001203809.png', 'Indomobil QT')">
+                            <!-- Background Image from User Upload -->
+                            <img src="1001203809.png" alt="Indomobil QT" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 opacity-90 group-hover:opacity-60 transition"></div>
+                            
                             <span class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-extrabold px-3 py-1 rounded-full shadow-lg">Rp 15 Jutaan</span>
-                            <span class="absolute top-4 left-4 bg-slate-800/90 text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Entry Favorite</span>
+                            <span class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Entry Favorite</span>
+                            
+                            <button class="absolute bottom-4 right-4 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Full Poster
+                            </button>
                         </div>
                         <div class="p-6 space-y-3">
                             <div class="flex justify-between items-center">
                                 <h3 class="font-extrabold text-xl text-slate-900">Indomobil QT</h3>
-                                <span class="text-xs font-bold text-brand-600">Harga: ~15 Jt</span>
+                                <span class="text-xs font-bold text-brand-600">Rp 15 Jt-an</span>
                             </div>
                             <p class="text-slate-600 text-xs leading-relaxed">
                                 Motor listrik compact dengan posisi berkendara nyaman, perawatan super hemat, dan baterai efisien untuk perjalanan harian Sragen.
                             </p>
                             <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-1">
-                                <div class="flex justify-between text-slate-600"><span>Kecepatan & Performa:</span><span class="font-semibold text-slate-800">Sangat Lincah</span></div>
-                                <div class="flex justify-between text-slate-600"><span>Cocok Untuk:</span><span class="font-semibold text-slate-800">Komuter & Harian</span></div>
+                                <div class="flex justify-between text-slate-600"><span>Desain:</span><span class="font-semibold text-slate-800">Classic Compact Scooter</span></div>
+                                <div class="flex justify-between text-slate-600"><span>Penggunaan:</span><span class="font-semibold text-slate-800">Komuter Harian & Perkotaan</span></div>
                             </div>
                         </div>
                     </div>
@@ -313,25 +331,25 @@
                 <!-- 2. QT PRO -->
                 <div class="motor-card city bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-md hover:shadow-2xl transition duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="relative h-64 overflow-hidden bg-slate-900 flex items-center justify-center p-4">
-                            <div class="text-center space-y-2">
-                                <div class="inline-flex items-center gap-1">
-                                    <span class="text-amber-400 font-black text-4xl tracking-tighter group-hover:scale-110 transition duration-300">QT</span>
-                                    <span class="bg-rose-600 text-white text-xs font-black px-2 py-0.5 rounded">PRO</span>
-                                </div>
-                                <span class="bg-amber-400/20 text-amber-300 text-[11px] font-bold px-3 py-1 rounded-full block border border-amber-400/30">Dual Color Trendsetter Edition</span>
-                                <p class="text-slate-400 text-xs px-4">Tampil beda dengan paduan warna stylish & performa ekstra.</p>
-                            </div>
+                        <div class="relative h-80 overflow-hidden bg-slate-950 flex items-center justify-center cursor-pointer" onclick="openImageModal('1001203813.png', 'Indomobil QT Pro')">
+                            <!-- Background Image from User Upload -->
+                            <img src="1001203813.png" alt="Indomobil QT Pro" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 opacity-90 group-hover:opacity-60 transition"></div>
+                            
                             <span class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-extrabold px-3 py-1 rounded-full shadow-lg">Rp 19 Jutaan</span>
-                            <span class="absolute top-4 left-4 bg-slate-800/90 text-emerald-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Best Value</span>
+                            <span class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-emerald-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Best Value</span>
+
+                            <button class="absolute bottom-4 right-4 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Full Poster
+                            </button>
                         </div>
                         <div class="p-6 space-y-3">
                             <div class="flex justify-between items-center">
                                 <h3 class="font-extrabold text-xl text-slate-900">Indomobil QT Pro</h3>
-                                <span class="text-xs font-bold text-brand-600">Harga: ~19 Jt</span>
+                                <span class="text-xs font-bold text-brand-600">Rp 19 Jt-an</span>
                             </div>
                             <p class="text-slate-600 text-xs leading-relaxed">
-                                Varian Pro dengan aksen warna ikonik, fitur keamanan lengkap, serta akselerasi responsif untuk aktivitas anak muda & keluarga.
+                                Varian Pro dengan paduan warna dual-tone ikonik, fitur keamanan lengkap, serta akselerasi responsif untuk anak muda & keluarga.
                             </p>
                             <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-1">
                                 <div class="flex justify-between text-slate-600"><span>Keunggulan:</span><span class="font-semibold text-slate-800">Desain 2-Tone Trendy</span></div>
@@ -351,26 +369,29 @@
                 <!-- 3. ADORA -->
                 <div class="motor-card sport bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-md hover:shadow-2xl transition duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="relative h-64 overflow-hidden bg-slate-900 flex items-center justify-center p-4">
-                            <div class="text-center space-y-2">
-                                <span class="text-white font-black text-4xl tracking-tight italic group-hover:scale-110 transition duration-300">Adora</span>
-                                <span class="bg-cyan-500/20 text-cyan-300 text-[11px] font-bold px-3 py-1 rounded-full block border border-cyan-500/30">Futuristic & High Comfort</span>
-                                <p class="text-slate-400 text-xs px-4">Bodi bongsor modern dengan dek kaki luas dan kenyamanan ekstra.</p>
-                            </div>
+                        <div class="relative h-80 overflow-hidden bg-slate-950 flex items-center justify-center cursor-pointer" onclick="openImageModal('1001203811.png', 'Indomobil Adora')">
+                            <!-- Background Image from User Upload -->
+                            <img src="1001203811.png" alt="Indomobil Adora" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 opacity-90 group-hover:opacity-60 transition"></div>
+                            
                             <span class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-extrabold px-3 py-1 rounded-full shadow-lg">Rp 25 Jutaan</span>
-                            <span class="absolute top-4 left-4 bg-slate-800/90 text-cyan-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Comfort Choice</span>
+                            <span class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-cyan-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Comfort Choice</span>
+
+                            <button class="absolute bottom-4 right-4 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Full Poster
+                            </button>
                         </div>
                         <div class="p-6 space-y-3">
                             <div class="flex justify-between items-center">
                                 <h3 class="font-extrabold text-xl text-slate-900">Indomobil Adora</h3>
-                                <span class="text-xs font-bold text-brand-600">Harga: ~25 Jt</span>
+                                <span class="text-xs font-bold text-brand-600">Rp 25 Jt-an</span>
                             </div>
                             <p class="text-slate-600 text-xs leading-relaxed">
                                 Skuter listrik futuristik berukuran proporsional dengan stabilitas tinggi, pencahayaan LED tajam, serta kenyamanan berkendara jarak jauh.
                             </p>
                             <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-1">
                                 <div class="flex justify-between text-slate-600"><span>Kenyamanan:</span><span class="font-semibold text-slate-800">Jok Ergonomis & Dek Luas</span></div>
-                                <div class="flex justify-between text-slate-600"><span>Fitur:</span><span class="font-semibold text-slate-800">Digital Panel Headlamp LED</span></div>
+                                <div class="flex justify-between text-slate-600"><span>Fitur:</span><span class="font-semibold text-slate-800">Digital Panel & LED Futuristic</span></div>
                             </div>
                         </div>
                     </div>
@@ -386,26 +407,29 @@
                 <!-- 4. SPRINTO -->
                 <div class="motor-card sport bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-md hover:shadow-2xl transition duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="relative h-64 overflow-hidden bg-slate-900 flex items-center justify-center p-4">
-                            <div class="text-center space-y-2">
-                                <span class="text-amber-400 font-black text-4xl tracking-widest group-hover:scale-110 transition duration-300 uppercase">SPRINTO</span>
-                                <span class="bg-amber-400/20 text-amber-300 text-[11px] font-bold px-3 py-1 rounded-full block border border-amber-400/30">Sporty Sharp & Aerodynamic</span>
-                                <p class="text-slate-400 text-xs px-4">Gaya tajam agresif bagi Anda pecinta performa dan estetika sporty.</p>
-                            </div>
+                        <div class="relative h-80 overflow-hidden bg-slate-950 flex items-center justify-center cursor-pointer" onclick="openImageModal('1001203814.png', 'Indomobil Sprinto')">
+                            <!-- Background Image from User Upload -->
+                            <img src="1001203814.png" alt="Indomobil Sprinto" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 opacity-90 group-hover:opacity-60 transition"></div>
+                            
                             <span class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-extrabold px-3 py-1 rounded-full shadow-lg">Rp 26 Jutaan</span>
-                            <span class="absolute top-4 left-4 bg-slate-800/90 text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Sport Series</span>
+                            <span class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Sport Series</span>
+
+                            <button class="absolute bottom-4 right-4 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Full Poster
+                            </button>
                         </div>
                         <div class="p-6 space-y-3">
                             <div class="flex justify-between items-center">
                                 <h3 class="font-extrabold text-xl text-slate-900">Indomobil Sprinto</h3>
-                                <span class="text-xs font-bold text-brand-600">Harga: ~26 Jt</span>
+                                <span class="text-xs font-bold text-brand-600">Rp 26 Jt-an</span>
                             </div>
                             <p class="text-slate-600 text-xs leading-relaxed">
                                 Desain sudut tajam yang terinspirasi dari motor balap urban. Akselerasi gesit dengan manuver lincah untuk lalu lintas perkotaan.
                             </p>
                             <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-1">
                                 <div class="flex justify-between text-slate-600"><span>Karakter:</span><span class="font-semibold text-slate-800">Sporty & Aggressive Look</span></div>
-                                <div class="flex justify-between text-slate-600"><span>Target:</span><span class="font-semibold text-slate-800">Rider Dinamis</span></div>
+                                <div class="flex justify-between text-slate-600"><span>Performa:</span><span class="font-semibold text-slate-800">Akselerasi Responsif</span></div>
                             </div>
                         </div>
                     </div>
@@ -421,27 +445,28 @@
                 <!-- 5. TYRANNO -->
                 <div class="motor-card adventure bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-md hover:shadow-2xl transition duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="relative h-64 overflow-hidden bg-slate-900 flex items-center justify-center p-4">
-                            <div class="text-center space-y-2">
-                                <span class="text-orange-500 font-black text-4xl tracking-tighter group-hover:scale-110 transition duration-300 flex items-center justify-center gap-1">
-                                    TYRANNO <i class="fa-solid fa-dragon text-2xl text-orange-400"></i>
-                                </span>
-                                <span class="bg-orange-500/20 text-orange-300 text-[11px] font-bold px-3 py-1 rounded-full block border border-orange-500/30">Rugged Adventure Crossover</span>
-                                <p class="text-slate-400 text-xs px-4">Tangguh untuk berbagai rute jalanan dengan bodi kekar & kokoh.</p>
-                            </div>
+                        <div class="relative h-80 overflow-hidden bg-slate-950 flex items-center justify-center cursor-pointer" onclick="openImageModal('1001203812.png', 'Indomobil Tyranno')">
+                            <!-- Background Image from User Upload -->
+                            <img src="1001203812.png" alt="Indomobil Tyranno" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 opacity-90 group-hover:opacity-60 transition"></div>
+                            
                             <span class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-extrabold px-3 py-1 rounded-full shadow-lg">Rp 27 Jutaan</span>
-                            <span class="absolute top-4 left-4 bg-slate-800/90 text-orange-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Adventure Tough</span>
+                            <span class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-orange-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-slate-700">Adventure Tough</span>
+
+                            <button class="absolute bottom-4 right-4 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Full Poster
+                            </button>
                         </div>
                         <div class="p-6 space-y-3">
                             <div class="flex justify-between items-center">
                                 <h3 class="font-extrabold text-xl text-slate-900">Indomobil Tyranno</h3>
-                                <span class="text-xs font-bold text-brand-600">Harga: ~27 Jt</span>
+                                <span class="text-xs font-bold text-brand-600">Rp 27 Jt-an</span>
                             </div>
                             <p class="text-slate-600 text-xs leading-relaxed">
                                 Motor listrik bertema petualangan dengan kompartemen & crash bar kokoh. Siap melibas tantangan jalan perkotaan hingga pedesaan.
                             </p>
                             <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-1">
-                                <div class="flex justify-between text-slate-600"><span>Bodi:</span><span class="font-semibold text-slate-800">Tangguh & Heavy-Duty</span></div>
+                                <div class="flex justify-between text-slate-600"><span>Bodi:</span><span class="font-semibold text-slate-800">Tangguh & Crossover Look</span></div>
                                 <div class="flex justify-between text-slate-600"><span>Suspensi:</span><span class="font-semibold text-slate-800">Resisten Berbagai Medan</span></div>
                             </div>
                         </div>
@@ -456,31 +481,31 @@
                 </div>
 
                 <!-- 6. TYRANNO X -->
-                <div class="motor-card adventure bg-white rounded-3xl overflow-hidden border border-2 border-amber-400 shadow-xl hover:shadow-2xl transition duration-300 flex flex-col justify-between group">
+                <div class="motor-card adventure bg-white rounded-3xl overflow-hidden border-2 border-amber-400 shadow-xl hover:shadow-2xl transition duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="relative h-64 overflow-hidden bg-slate-950 flex items-center justify-center p-4">
-                            <div class="text-center space-y-2">
-                                <div class="inline-flex items-center gap-1">
-                                    <span class="text-amber-400 font-black text-4xl tracking-tighter group-hover:scale-110 transition duration-300">TYRANNO</span>
-                                    <span class="text-rose-500 font-black text-5xl">X</span>
-                                </div>
-                                <span class="bg-amber-400/20 text-amber-300 text-[11px] font-bold px-3 py-1 rounded-full block border border-amber-400/30">Ultimate Flagship Crossover</span>
-                                <p class="text-slate-400 text-xs px-4">Tipe flagship kasta tertinggi dengan performa & fitur paling lengkap.</p>
-                            </div>
+                        <div class="relative h-80 overflow-hidden bg-slate-950 flex items-center justify-center cursor-pointer" onclick="openImageModal('1001203810.png', 'Indomobil Tyranno X')">
+                            <!-- Background Image from User Upload -->
+                            <img src="1001203810.png" alt="Indomobil Tyranno X" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 opacity-90 group-hover:opacity-60 transition"></div>
+                            
                             <span class="absolute top-4 right-4 bg-amber-500 text-slate-950 text-xs font-black px-3 py-1 rounded-full shadow-lg">Rp 33 Jutaan</span>
-                            <span class="absolute top-4 left-4 bg-rose-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md">TOP FLAGSHIP</span>
+                            <span class="absolute top-4 left-4 bg-rose-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow">TOP FLAGSHIP</span>
+
+                            <button class="absolute bottom-4 right-4 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Full Poster
+                            </button>
                         </div>
                         <div class="p-6 space-y-3">
                             <div class="flex justify-between items-center">
                                 <h3 class="font-extrabold text-xl text-slate-900">Indomobil Tyranno X</h3>
-                                <span class="text-xs font-extrabold text-amber-600">Harga: ~33 Jt</span>
+                                <span class="text-xs font-extrabold text-amber-600">Rp 33 Jt-an</span>
                             </div>
                             <p class="text-slate-600 text-xs leading-relaxed">
                                 Kasta tertinggi dari varian Tyranno. Dilengkapi dengan livery camo/gold eksklusif, windshield adventure, dan spesifikasi baterai premium.
                             </p>
                             <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs space-y-1">
-                                <div class="flex justify-between text-slate-700"><span>Kelas:</span><span class="font-extrabold text-slate-900">Flagship Ultimate</span></div>
-                                <div class="flex justify-between text-slate-700"><span>Fitur:</span><span class="font-extrabold text-slate-900">Windshield & Premium Protection</span></div>
+                                <div class="flex justify-between text-slate-700"><span>Kelas:</span><span class="font-extrabold text-slate-900">Flagship Ultimate Crossover</span></div>
+                                <div class="flex justify-between text-slate-700"><span>Proteksi:</span><span class="font-extrabold text-slate-900">Windshield & Premium Protection</span></div>
                             </div>
                         </div>
                     </div>
@@ -888,7 +913,60 @@
         <span id="toast-msg">Tautan lokasi telah disalin!</span>
     </div>
 
+    <!-- Full Image Lightbox Modal -->
+    <div id="image-modal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4" onclick="closeImageModal()">
+        <div class="relative max-w-lg w-full bg-slate-900 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl" onclick="event.stopPropagation()">
+            <div class="p-4 bg-slate-950 text-white flex justify-between items-center border-b border-slate-800">
+                <span id="modal-image-title" class="font-bold text-sm text-amber-400">Poster Produk</span>
+                <button onclick="closeImageModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center text-sm">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-2 max-h-[75vh] overflow-y-auto flex items-center justify-center bg-black">
+                <img id="modal-image-src" src="" alt="Poster Full" class="max-h-[70vh] w-auto object-contain rounded-xl">
+            </div>
+            <div class="p-4 bg-slate-900 flex justify-between items-center">
+                <span class="text-xs text-slate-400">Dealer Resmi Indomobil Sragen</span>
+                <a href="https://wa.me/6285740121640?text=Halo%20Mas%20Galih,%20saya%20ingin%20tanya%20detail%20unit%20ini" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-4 py-2 rounded-xl flex items-center gap-1.5">
+                    <i class="fa-brands fa-whatsapp"></i> Chat Galih
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Hero Poster Switcher
+        function switchHeroPoster(src, title) {
+            const heroImg = document.getElementById('hero-poster-img');
+            const heroTitle = document.getElementById('hero-poster-title');
+            heroImg.style.opacity = '0';
+            setTimeout(() => {
+                heroImg.src = src;
+                heroTitle.innerText = title;
+                heroImg.style.opacity = '1';
+            }, 200);
+
+            // Update border highlights
+            document.querySelectorAll('.thumbnail-btn').forEach(img => {
+                img.classList.remove('border-amber-400');
+                img.classList.add('border-transparent');
+                if(img.src.includes(src)) {
+                    img.classList.add('border-amber-400');
+                    img.classList.remove('border-transparent');
+                }
+            });
+        }
+
+        // Image Lightbox Modal Handlers
+        function openImageModal(src, title) {
+            document.getElementById('modal-image-src').src = src;
+            document.getElementById('modal-image-title').innerText = title;
+            document.getElementById('image-modal').classList.remove('hidden');
+        }
+
+        function closeImageModal() {
+            document.getElementById('image-modal').classList.add('hidden');
+        }
         
         // Filter Catalog Function
         function filterCatalog(category) {
