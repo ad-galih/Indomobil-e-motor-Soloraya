@@ -419,8 +419,8 @@
 
             </div>
 
-            <!-- Tabular Pricelist Display Section (Hidden by default, shown per simulation request) -->
-            <div id="pricelist-container" class="mt-16 bg-slate-950 rounded-3xl border border-slate-800 p-6 sm:p-8 shadow-2xl hidden">
+            <!-- Tabular Pricelist Display Section -->
+            <div id="pricelist-container" class="mt-16 bg-slate-950 rounded-3xl border border-slate-800 p-6 sm:p-8 shadow-2xl">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-800">
                     <div>
                         <h3 class="text-xl font-extrabold text-white flex items-center gap-2">
@@ -1126,7 +1126,50 @@
         </a>
     </div>
 
-    <!-- Script Logika Simulasi Kredit Interaktif -->
+    <!-- Modal Poster Viewer -->
+    <div id="image-modal" class="fixed inset-0 z-50 bg-black/90 hidden backdrop-blur-md flex items-center justify-center p-4">
+        <div class="relative max-w-2xl w-full bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl">
+            <div class="p-4 bg-slate-950 flex items-center justify-between border-b border-slate-800">
+                <h4 id="modal-title" class="text-white font-extrabold text-sm">Preview Poster</h4>
+                <button onclick="closeImageModal()" class="text-slate-400 hover:text-white text-xl p-1">&times;</button>
+            </div>
+            <div class="p-2 flex items-center justify-center max-h-[75vh] overflow-auto bg-slate-950">
+                <img id="modal-image" src="" alt="Poster" class="max-h-[70vh] w-auto object-contain rounded-lg">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Persyaratan Kredit -->
+    <div id="modal-syarat" class="fixed inset-0 z-50 bg-black/80 hidden backdrop-blur-md flex items-center justify-center p-4">
+        <div class="relative max-w-lg w-full bg-slate-900 border border-slate-700 rounded-3xl p-6 text-white space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <h3 class="font-extrabold text-base text-amber-400"><i class="fa-solid fa-file-signature mr-2"></i>Persyaratan Kredit IMFI</h3>
+                <button onclick="document.getElementById('modal-syarat').classList.add('hidden')" class="text-slate-400 hover:text-white text-xl">&times;</button>
+            </div>
+            <div class="space-y-3 text-xs text-slate-300">
+                <div class="p-3 bg-slate-950 rounded-xl border border-slate-800">
+                    <h4 class="font-bold text-white mb-1">Perorangan / Perorangan Swasta:</h4>
+                    <ul class="list-disc pl-4 space-y-1">
+                        <li>FC KTP Pemohon & Pasangan (Suami/Istri)</li>
+                        <li>FC Kartu Keluarga (KK)</li>
+                        <li>FC Rekening Listrik / PBB</li>
+                        <li>Slip Gaji (Karyawan) / Bukti Usaha (Wiraswasta)</li>
+                    </ul>
+                </div>
+                <div class="p-3 bg-slate-950 rounded-xl border border-slate-800">
+                    <h4 class="font-bold text-white mb-1">Perusahaan / Badan Usaha:</h4>
+                    <ul class="list-disc pl-4 space-y-1">
+                        <li>FC KTP Direksi & Komisaris</li>
+                        <li>FC Akta Pendirian & Perubahan</li>
+                        <li>FC SIUP, TDP, NIB & NPWP Perusahaan</li>
+                        <li>Rekening Koran 3 Bulan Terakhir</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Logika Simulasi Kredit Interaktif & Fitur Lainnya -->
     <script>
         // Data Pricelist IMFI Resmi Tahun 2026
         const creditData = {
@@ -1262,43 +1305,32 @@
         function renderPricelistTable() {
             const selectedModelKey = document.getElementById('calc-model').value;
             const tbody = document.getElementById('pricelist-table-body');
-            const container = document.getElementById('pricelist-container');
+            const modelData = creditData[selectedModelKey];
             
             tbody.innerHTML = '';
-            container.classList.remove('hidden');
+            
+            modelData.dpList.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-slate-900/50 transition';
+                
+                const waText = encodeURIComponent(
+                    `Halo Mas Galih, saya ingin ambil kredit IMFI untuk unit ${modelData.name} dengan DP ${formatRupiah(row.dp)}.`
+                );
 
-            Object.keys(creditData).forEach(modelKey => {
-                if (modelKey !== selectedModelKey) return;
-
-                const item = creditData[modelKey];
-                item.dpList.forEach((dpRow, dpIdx) => {
-                    const tr = document.createElement('tr');
-                    tr.className = "hover:bg-slate-900/80 transition cursor-pointer";
-                    tr.onclick = function() {
-                        document.getElementById('calc-model').value = modelKey;
-                        updateCalculatorDP();
-                        document.getElementById('calc-dp').value = dpIdx;
-                        calculateCredit();
-                        window.location.hash = 'simulasi-kredit';
-                    };
-
-                    tr.innerHTML = `
-                        <td class="p-3 font-bold text-white">${dpIdx === 0 ? item.name : ''}</td>
-                        <td class="p-3 text-slate-400">${dpIdx === 0 ? formatRupiah(item.otr) : ''}</td>
-                        <td class="p-3 font-extrabold text-emerald-400">${formatRupiah(dpRow.dp)}</td>
-                        <td class="p-3 text-slate-300">${formatRupiah(dpRow.t11)}</td>
-                        <td class="p-3 text-slate-300">${formatRupiah(dpRow.t17)}</td>
-                        <td class="p-3 text-slate-300">${formatRupiah(dpRow.t23)}</td>
-                        <td class="p-3 text-slate-300">${formatRupiah(dpRow.t29)}</td>
-                        <td class="p-3 font-extrabold text-amber-300 bg-amber-400/5">${formatRupiah(dpRow.t35)}</td>
-                        <td class="p-3 text-center">
-                            <button class="px-2.5 py-1 bg-amber-500/20 hover:bg-amber-500 hover:text-slate-950 text-amber-300 font-bold rounded-lg text-[10px] transition">
-                                Pilih DP
-                            </button>
-                        </td>
-                    `;
-                    tbody.appendChild(tr);
-                });
+                tr.innerHTML = `
+                    <td class="p-3 font-bold text-white">${modelData.name}</td>
+                    <td class="p-3 text-slate-400">${formatRupiah(modelData.otr)}</td>
+                    <td class="p-3 font-extrabold text-emerald-400">${formatRupiah(row.dp)}</td>
+                    <td class="p-3">${formatRupiah(row.t11)}</td>
+                    <td class="p-3">${formatRupiah(row.t17)}</td>
+                    <td class="p-3">${formatRupiah(row.t23)}</td>
+                    <td class="p-3">${formatRupiah(row.t29)}</td>
+                    <td class="p-3 font-bold text-amber-300 bg-amber-400/10">${formatRupiah(row.t35)}</td>
+                    <td class="p-3 text-center">
+                        <a href="https://wa.me/6285740121640?text=${waText}" target="_blank" class="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg text-[10px] inline-block">Pilih</a>
+                    </td>
+                `;
+                tbody.appendChild(tr);
             });
         }
 
@@ -1306,10 +1338,19 @@
             document.getElementById('calc-model').value = modelKey;
             updateCalculatorDP();
             renderPricelistTable();
-            window.location.hash = 'simulasi-kredit';
+            document.getElementById('simulasi-kredit').scrollIntoView({ behavior: 'smooth' });
         }
 
         function filterCatalog(category) {
+            const cards = document.querySelectorAll('.motor-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.className = 'filter-btn px-4 py-2 text-xs font-bold rounded-xl bg-white text-slate-700 border border-slate-200 hover:bg-slate-100';
             });
@@ -1318,20 +1359,26 @@
             if (activeBtn) {
                 activeBtn.className = 'filter-btn px-4 py-2 text-xs font-bold rounded-xl bg-brand-600 text-white shadow-md';
             }
-
-            const cards = document.querySelectorAll('.motor-card');
-            cards.forEach(card => {
-                if (category === 'all' || card.classList.contains(category)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
         }
 
-        function switchHeroPoster(imgSrc, titleText) {
-            document.getElementById('hero-poster-img').src = imgSrc;
-            document.getElementById('hero-poster-title').innerText = titleText;
+        function switchHeroPoster(src, title) {
+            const heroImg = document.getElementById('hero-poster-img');
+            heroImg.style.opacity = '0.3';
+            setTimeout(() => {
+                heroImg.src = src;
+                document.getElementById('hero-poster-title').innerText = title;
+                heroImg.style.opacity = '1';
+            }, 150);
+        }
+
+        function openImageModal(src, title) {
+            document.getElementById('modal-image').src = src;
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('image-modal').classList.remove('hidden');
+        }
+
+        function closeImageModal() {
+            document.getElementById('image-modal').classList.add('hidden');
         }
 
         function submitFormToWA(e) {
@@ -1342,20 +1389,21 @@
             const type = document.getElementById('form-type').value;
 
             const text = encodeURIComponent(
-                `Halo Mas Galih Pratignyo, saya mengajukan pesanan via Website:\n\n` +
+                `Halo Mas Galih Pratignyo, saya ingin berkonsultasi:\n\n` +
                 `• Nama: ${name}\n` +
                 `• Domisili: ${address}\n` +
-                `• Pilihan Motor: ${model}\n` +
-                `• Keperluan: ${type}\n\n` +
-                `Mohon dapat ditindaklanjuti. Terima kasih.`
+                `• Unit Minat: ${model}\n` +
+                `• Kebutuhan: ${type}\n\n` +
+                `Mohon informasi lebih lanjut, terima kasih!`
             );
 
             window.open(`https://wa.me/6285740121640?text=${text}`, '_blank');
         }
 
-        // Initialize on Load
+        // Initialize on load
         window.addEventListener('DOMContentLoaded', () => {
             updateCalculatorDP();
+            renderPricelistTable();
         });
     </script>
 </body>
