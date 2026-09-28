@@ -139,7 +139,7 @@
                     </h1>
                     
                     <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                        Dapatkan koleksi Motor Listrik Indomobil resmi mulai <strong>Rp 15.350.000</strong>! Hubungi <strong>Galih Pratignyo (085740121640)</strong> untuk info promo, skema kredit angsuran ringan via IMFI, dan jadwal Test Ride gratis. Melayani pengiriman unit ke seluruh Jateng dan DIY. Harga akan berbeda menyesuaikan dengan kota atau kabupaten masing-masing.
+                        Dapatkan koleksi Motor Listrik Indomobil resmi mulai <strong>Rp 15.350.000</strong>! Hubungi <strong>Galih Pratignyo (085740121640)</strong> untuk info promo, skema kredit angsuran ringan via IMFI, dan jadwal Test Ride gratis.
                     </p>
 
                     <!-- Model Badges Quick Glance -->
@@ -264,16 +264,16 @@
         </div>
     </section>
 
-    <!-- SECTION SIMULASI KREDIT (IMFI) -->
+    <!-- SECTION SIMULASI KREDIT MOTOR LISTRIK (IMFI) -->
     <section id="simulasi-kredit" class="py-16 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white border-y border-slate-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <div class="inline-flex items-center gap-2 bg-amber-400/20 text-amber-300 border border-amber-400/30 px-4 py-1.5 rounded-full text-xs font-extrabold mb-3">
-                    <i class="fa-solid fa-calculator text-amber-400"></i> SPESIAL PROMO - INDOMOBIL FINANCE (IMFI)
+                    <i class="fa-solid fa-calculator text-amber-400"></i> SPESIAL PROMO SEPTEMBER CERIA - INDOMOBIL FINANCE (IMFI)
                 </div>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Simulasi Perhitungan Kredit</h2>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Simulasi Perhitungan Kredit Motor Listrik</h2>
                 <p class="text-slate-300 text-sm sm:text-base mt-2 leading-relaxed">
-                    Pilih tipe unit, uang muka (DP), dan jangka waktu angsuran (tenor) sesuai kebutuhan Anda. Perhitungan resmi berdasarkan Pricelist IMFI.
+                    Pilih tipe unit, uang muka (DP), dan jangka waktu angsuran (tenor) sesuai kebutuhan Anda. Perhitungan resmi berdasarkan Pricelist IMFI Sragen.
                 </p>
             </div>
 
@@ -287,7 +287,7 @@
                             <i class="fa-solid fa-sliders"></i>
                         </div>
                         <div>
-                            <h3 class="font-extrabold text-lg text-white">Kalkulator Kredit OTR Jateng</h3>
+                            <h3 class="font-extrabold text-lg text-white">Kalkulator Kredit Interaktif</h3>
                             <p class="text-xs text-slate-400">Silakan atur parameter kredit di bawah ini</p>
                         </div>
                     </div>
@@ -297,7 +297,7 @@
                         <label class="block text-xs font-extrabold text-slate-300 uppercase tracking-wider mb-2">
                             1. Pilih Tipe Motor Listrik *
                         </label>
-                        <select id="calc-model" onchange="updateCalculatorDP()" class="w-full px-4 py-3.5 rounded-xl border border-slate-700 bg-slate-900 text-white font-bold focus:ring-2 focus:ring-amber-400 outline-none text-sm transition">
+                        <select id="calc-model" onchange="updateCalculatorDP(); renderPricelistTable();" class="w-full px-4 py-3.5 rounded-xl border border-slate-700 bg-slate-900 text-white font-bold focus:ring-2 focus:ring-amber-400 outline-none text-sm transition">
                             <option value="qt">Indomobil QT (OTR Rp 15.350.000)</option>
                             <option value="qt_pro">Indomobil QT Pro (OTR Rp 19.150.000)</option>
                             <option value="adora_basic">Indomobil Adora Basic (OTR Rp 25.300.000)</option>
@@ -312,7 +312,7 @@
                         <label class="block text-xs font-extrabold text-slate-300 uppercase tracking-wider mb-2">
                             2. Pilih Uang Muka / DP (Sesuai Skema IMFI) *
                         </label>
-                        <select id="calc-dp" onchange="calculateCredit()" class="w-full px-4 py-3.5 rounded-xl border border-slate-700 bg-slate-900 text-amber-400 font-extrabold focus:ring-2 focus:ring-amber-400 outline-none text-sm transition">
+                        <select id="calc-dp" onchange="calculateCredit(); renderPricelistTable();" class="w-full px-4 py-3.5 rounded-xl border border-slate-700 bg-slate-900 text-amber-400 font-extrabold focus:ring-2 focus:ring-amber-400 outline-none text-sm transition">
                             <!-- Populated dynamically via JS -->
                         </select>
                         <p class="text-[11px] text-slate-400 mt-1.5 flex items-center gap-1">
@@ -393,7 +393,7 @@
                             </a>
 
                             <p class="text-center text-[11px] text-slate-400">
-                                <i class="fa-solid fa-shield-halved text-amber-400 mr-1"></i> Data disimulasikan sesuai tabel pricelist resmi IMFI 2026.
+                                <i class="fa-solid fa-shield-halved text-amber-400 mr-1"></i> Data disimulasikan sesuai tabel pricelist resmi IMFI Sragen Mei 2026.
                             </p>
                         </div>
                     </div>
@@ -419,26 +419,14 @@
 
             </div>
 
-            <!-- Tabular Pricelist Display Section -->
-            <div class="mt-16 bg-slate-950 rounded-3xl border border-slate-800 p-6 sm:p-8 shadow-2xl">
+            <!-- Tabular Pricelist Display Section (Hidden by default, shown per simulation request) -->
+            <div id="pricelist-container" class="mt-16 bg-slate-950 rounded-3xl border border-slate-800 p-6 sm:p-8 shadow-2xl hidden">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-800">
                     <div>
                         <h3 class="text-xl font-extrabold text-white flex items-center gap-2">
-                            <i class="fa-solid fa-table-list text-amber-400"></i> Tabel Skema Angsuran Lengkap (Mei 2026)
+                            <i class="fa-solid fa-table-list text-amber-400"></i> Detail Skema Angsuran Terpilih (Mei 2026)
                         </h3>
-                        <p class="text-xs text-slate-400 mt-1">Klik pada baris atau DP untuk langsung memasukkannya ke kalkulator</p>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-xs text-slate-400">Filter Unit:</span>
-                        <select id="table-filter-model" onchange="renderPricelistTable()" class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700 text-xs font-bold text-amber-400 outline-none">
-                            <option value="all">Semua Tipe Motor</option>
-                            <option value="qt">Indomobil QT</option>
-                            <option value="qt_pro">Indomobil QT Pro</option>
-                            <option value="adora_basic">Indomobil Adora Basic</option>
-                            <option value="adora_livery">Indomobil Adora Livery Vibe</option>
-                            <option value="sprinto">Indomobil Sprinto</option>
-                            <option value="tyranno">Indomobil Tyranno</option>
-                        </select>
+                        <p class="text-xs text-slate-400 mt-1">Daftar opsi angsuran berdasarkan tipe motor yang sedang Anda simulasikan</p>
                     </div>
                 </div>
 
@@ -1033,531 +1021,211 @@
 
     <!-- Form Simulasi Kredit & Test Ride Booking -->
     <section id="simulasi" class="py-16 bg-slate-900 text-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Left Text -->
-                <div class="lg:col-span-5 space-y-6">
-                    <span class="text-amber-400 font-extrabold text-xs tracking-wider uppercase bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">Layanan Pelanggan Fast-Track</span>
-                    <h2 class="text-3xl font-extrabold text-white">Ingin Konsultasi Promo, Skema Kredit, atau Booking Test Ride?</h2>
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        Silakan isi formulir singkat ini. Data Anda akan langsung terkirim secara instan ke WhatsApp **Galih Pratignyo (085740121640)** untuk langsung mendapatkan penawaran terbaik!
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-amber-400 font-extrabold text-xs tracking-wider uppercase bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">Konsultasi & Test Ride</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 leading-tight">Ingin Mencoba Sensasi Mengendarai Motor Listrik?</h2>
+                    <p class="text-slate-300 mt-4 leading-relaxed">
+                        Kunjungi Dealer Kami di Sragen atau jadwalkan Test Ride gratis bersama tim Sales kami. Dapatkan penawaran harga promo khusus bulan ini!
                     </p>
 
-                    <div class="space-y-4 pt-2 text-xs">
-                        <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold shrink-0">1</div>
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold shrink-0">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
                             <div>
-                                <h4 class="font-bold text-white text-sm">Pilih Model Motor</h4>
-                                <p class="text-slate-400">Pilih dari QT, QT Pro, Adora, Sprinto, Tyranno, atau Tyranno X.</p>
+                                <h4 class="font-bold text-white">Sales Executive Resmi</h4>
+                                <p class="text-xs text-slate-400">Galih Pratignyo — Layanan cepat, ramah, dan berpengalaman.</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold shrink-0">2</div>
-                            <div>
-                                <h4 class="font-bold text-white text-sm">Tentukan Jenis Pengajuan</h4>
-                                <p class="text-slate-400">Pilihan Pembelian Cash, Simulasi Kredit DP Murah, atau Test Ride Gratis.</p>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold shrink-0">
+                                <i class="fa-solid fa-phone"></i>
                             </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold shrink-0">3</div>
                             <div>
-                                <h4 class="font-bold text-white text-sm">Respon Instan Sales</h4>
-                                <p class="text-slate-400">Mas Galih akan segera menghubungi Anda dengan rincian promo terbaru.</p>
+                                <h4 class="font-bold text-white">Telepon / WhatsApp</h4>
+                                <p class="text-xs text-slate-400">0857-4012-1640 (Respon Cepat Jam Kerja)</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Form Box -->
-                <div class="lg:col-span-7">
-                    <div class="bg-slate-800 p-6 sm:p-8 rounded-3xl border border-slate-700 shadow-2xl text-slate-900">
-                        <h3 class="text-xl font-extrabold text-white mb-6 flex items-center gap-2">
-                            <i class="fa-solid fa-paper-plane text-emerald-400"></i> Form Konsultasi & Test Ride
-                        </h3>
+                <div class="bg-slate-950 p-8 rounded-3xl border border-slate-800 shadow-2xl">
+                    <h3 class="text-xl font-extrabold text-white mb-2">Form Booking Test Ride & Kredit</h3>
+                    <p class="text-xs text-slate-400 mb-6">Isi data di bawah untuk terhubung langsung dengan Galih via WhatsApp</p>
 
-                        <form onsubmit="handleFormSubmit(event)" class="space-y-4">
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-300 mb-1">Nama Lengkap *</label>
-                                    <input type="text" id="form-name" required placeholder="Contoh: Bpk. Budi Sragen" class="w-full px-4 py-3 rounded-xl border border-slate-600 bg-slate-900 text-white focus:ring-2 focus:ring-emerald-500 outline-none text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-300 mb-1">Nomor WhatsApp / HP *</label>
-                                    <input type="tel" id="form-phone" required placeholder="Contoh: 08123456789" class="w-full px-4 py-3 rounded-xl border border-slate-600 bg-slate-900 text-white focus:ring-2 focus:ring-emerald-500 outline-none text-sm">
-                                </div>
-                            </div>
-
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-300 mb-1">Pilihan Model Motor *</label>
-                                    <select id="form-model" class="w-full px-4 py-3 rounded-xl border border-slate-600 bg-slate-900 text-white focus:ring-2 focus:ring-emerald-500 outline-none text-sm">
-                                        <option value="QT (Rp 15.350.000)">Indomobil QT (Rp 15.350.000)</option>
-                                        <option value="QT Pro (Rp 19.150.000)">Indomobil QT Pro (Rp 19.150.000)</option>
-                                        <option value="Adora Basic (Rp 25.300.000)">Indomobil Adora Basic (Rp 25.300.000)</option>
-                                        <option value="Adora Livery Vibe (Rp 25.500.000)">Indomobil Adora Livery Vibe (Rp 25.500.000)</option>
-                                        <option value="Sprinto (Rp 26.100.000)">Indomobil Sprinto (Rp 26.100.000)</option>
-                                        <option value="Tyranno (Rp 27.100.000)">Indomobil Tyranno (Rp 27.100.000)</option>
-                                        <option value="Tyranno X (Coming Soon)">Indomobil Tyranno X (Coming Soon)</option>
-                                        <option value="Belum Yakin / Perlu Rekomendasi">Belum Yakin (Konsultasi Dulu)</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-300 mb-1">Jenis Layanan *</label>
-                                    <select id="form-service" class="w-full px-4 py-3 rounded-xl border border-slate-600 bg-slate-900 text-white focus:ring-2 focus:ring-emerald-500 outline-none text-sm">
-                                        <option value="Simulasi Kredit & DP">Simulasi Kredit & DP Murah</option>
-                                        <option value="Pembelian Cash">Pembelian Cash (Tunai)</option>
-                                        <option value="Booking Test Ride di Dealer">Booking Test Ride di Dealer Sragen</option>
-                                        <option value="Tanya Promo & Stock Ready">Tanya Promo & Stok Unit</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-bold text-slate-300 mb-1">Catatan Tambahan / Alamat (Kecamatan)</label>
-                                <textarea id="form-notes" rows="3" placeholder="Contoh: Rencana DP 5 juta, lokasi saya di Kecamatan Karangmalang Sragen..." class="w-full px-4 py-3 rounded-xl border border-slate-600 bg-slate-900 text-white focus:ring-2 focus:ring-emerald-500 outline-none text-sm"></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-4 rounded-xl shadow-lg shadow-emerald-500/30 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-base">
-                                <i class="fa-brands fa-whatsapp text-2xl"></i>
-                                <span>Kirim Form ke Sales Galih (085740121640)</span>
-                            </button>
-                            
-                            <p class="text-center text-xs text-slate-400 mt-2">
-                                <i class="fa-solid fa-lock text-emerald-400 mr-1"></i> Respon cepat dari Sales Resmi Dealer Indomobil E-Motor Sragen.
-                            </p>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Location & Operating Hours Details -->
-    <section id="jam-lokasi" class="py-16 bg-slate-100 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-brand-600 font-extrabold text-xs sm:text-sm tracking-wider uppercase bg-brand-50 px-3 py-1 rounded-full">Kunjungan Dealer</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-3">Jam Operasional & Alamat Dealer Resmi</h2>
-                <p class="text-slate-600 text-sm sm:text-base mt-2">Datang langsung untuk melihat unit dan rasakan pengalaman berkendara Motor Listrik Indomobil.</p>
-            </div>
-
-            <div class="grid lg:grid-cols-12 gap-8 items-stretch">
-                <!-- Location Info Card -->
-                <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-lg flex flex-col justify-between space-y-6">
-                    <div>
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-4">
-                            <i class="fa-solid fa-location-dot"></i> Dealer Resmi Terverifikasi
+                    <form onsubmit="submitFormToWA(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-1">Nama Lengkap *</label>
+                            <input type="text" id="form-name" required placeholder="Contoh: Budi Santoso" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
                         </div>
-                        <h3 class="text-2xl font-extrabold text-slate-900 mb-1">Indomobil E-Motor Sragen</h3>
-                        <p class="text-slate-500 text-xs font-medium mb-6">Pusat Penjualan, Service & Test Ride Resmi</p>
-
-                        <div class="space-y-4 text-sm">
-                            
-                            <!-- Operating Hours Table -->
-                            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
-                                <span class="block text-xs text-brand-700 font-extrabold uppercase tracking-wide border-b border-slate-200 pb-2">
-                                    <i class="fa-solid fa-clock mr-1.5"></i> Jadwal Jam Operasional:
-                                </span>
-                                <div class="flex justify-between items-center text-xs text-slate-700 pt-1">
-                                    <span>Senin - Jumat:</span>
-                                    <span class="font-bold text-slate-900">08.30 - 16.30 WIB</span>
-                                </div>
-                                <div class="flex justify-between items-center text-xs text-slate-700">
-                                    <span>Sabtu:</span>
-                                    <span class="font-bold text-slate-900">08.30 - 15.00 WIB</span>
-                                </div>
-                                <div class="flex justify-between items-center text-xs text-rose-600 font-bold pt-1 border-t border-slate-200">
-                                    <span>Minggu & Tanggal Merah:</span>
-                                    <span class="bg-rose-100 text-rose-700 px-2 py-0.5 rounded text-[11px]">LIBUR</span>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3 pt-2">
-                                <div class="w-8 h-8 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
-                                    <i class="fa-solid fa-user-tie"></i>
-                                </div>
-                                <div>
-                                    <span class="block text-xs text-slate-400 font-semibold uppercase">Sales Consultant</span>
-                                    <span class="font-extrabold text-slate-900">Galih Pratignyo</span>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
-                                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                                </div>
-                                <div>
-                                    <span class="block text-xs text-slate-400 font-semibold uppercase">Kontak Telepon / WA</span>
-                                    <a href="https://wa.me/6285740121640" target="_blank" class="font-extrabold text-emerald-700 hover:underline">
-                                        0857-4012-1640
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center shrink-0">
-                                    <i class="fa-solid fa-map-pin"></i>
-                                </div>
-                                <div>
-                                    <span class="block text-xs text-slate-400 font-semibold uppercase">Link Tautan Google Maps</span>
-                                    <a href="https://maps.app.goo.gl/TkbtiaUciyUmDVzB8" target="_blank" class="text-brand-600 font-bold hover:underline break-all text-xs">
-                                        https://maps.app.goo.gl/TkbtiaUciyUmDVzB8
-                                    </a>
-                                </div>
-                            </div>
-
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-1">Alamat / Domisili *</label>
+                            <input type="text" id="form-address" required placeholder="Contoh: Sragen Kota / Karangmalang" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
                         </div>
-                    </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-1">Pilihan Unit Motor *</label>
+                            <select id="form-model" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+                                <option value="Indomobil QT">Indomobil QT (Rp 15.350.000)</option>
+                                <option value="Indomobil QT Pro">Indomobil QT Pro (Rp 19.150.000)</option>
+                                <option value="Indomobil Adora">Indomobil Adora (Rp 25.300.000)</option>
+                                <option value="Indomobil Sprinto">Indomobil Sprinto (Rp 26.100.000)</option>
+                                <option value="Indomobil Tyranno">Indomobil Tyranno (Rp 27.100.000)</option>
+                                <option value="Indomobil Tyranno X">Indomobil Tyranno X (Coming Soon)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-1">Kebutuhan Utama *</label>
+                            <select id="form-type" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+                                <option value="Booking Test Ride">Booking Test Ride</option>
+                                <option value="Pengajuan Kredit (IMFI)">Pengajuan Kredit (IMFI)</option>
+                                <option value="Pembelian Cash">Pembelian Cash</option>
+                                <option value="Tanya Promo & Diskon">Tanya Promo & Diskon</option>
+                            </select>
+                        </div>
 
-                    <div class="pt-4 space-y-3 border-t border-slate-100">
-                        <a href="https://maps.app.goo.gl/TkbtiaUciyUmDVzB8" 
-                           target="_blank" 
-                           class="w-full bg-slate-900 hover:bg-slate-800 text-white font-extrabold py-3.5 px-6 rounded-xl shadow-md transition flex items-center justify-center gap-2 text-sm">
-                            <i class="fa-solid fa-diamond-turn-right text-amber-400 text-lg"></i>
-                            <span>Buka Navigasi Google Maps Now</span>
-                        </a>
-
-                        <button onclick="copyMapsLink()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 px-6 rounded-xl transition flex items-center justify-center gap-2 text-xs">
-                            <i class="fa-solid fa-copy"></i>
-                            <span id="copy-btn-text">Salin Link Lokasi Dealer</span>
+                        <button type="submit" class="w-full py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm rounded-xl transition shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Kirim Pesan via WhatsApp
                         </button>
-                    </div>
-                </div>
-
-                <!-- Interactive Map Frame Placeholder -->
-                <div class="lg:col-span-7 bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg flex flex-col min-h-[350px]">
-                    <div class="p-4 bg-slate-900 text-white flex items-center justify-between text-xs">
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-map text-emerald-400"></i>
-                            <span class="font-bold">Google Maps Navigation Preview</span>
-                        </div>
-                        <span class="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded text-[10px] font-bold">Indomobil E-Motor Sragen</span>
-                    </div>
-                    
-                    <div class="relative flex-1 bg-slate-800 text-white flex flex-col items-center justify-center p-8 text-center">
-                        <div class="w-20 h-20 rounded-full bg-slate-900 border border-slate-700 shadow-2xl flex items-center justify-center mb-4 pulse-effect">
-                            <i class="fa-solid fa-location-dot text-4xl text-rose-500 animate-bounce"></i>
-                        </div>
-                        <h4 class="font-extrabold text-2xl text-white mb-2">Dealer Resmi Indomobil Sragen</h4>
-                        <p class="text-slate-300 text-sm max-w-md mb-6 leading-relaxed">
-                            Klik tombol di bawah ini untuk membuka navigasi rute tercepat menuju lokasi dealer kami via aplikasi Google Maps HP Anda.
-                        </p>
-                        <a href="https://maps.app.goo.gl/TkbtiaUciyUmDVzB8" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold px-8 py-4 rounded-xl shadow-lg shadow-emerald-500/30 transition transform hover:scale-105 flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-location-arrow"></i> Petunjuk Rute Google Maps
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-brand-600 font-extrabold text-xs sm:text-sm tracking-wider uppercase bg-brand-50 px-3 py-1 rounded-full">Pertanyaan Sering Diajukan</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-3">FAQ Motor Listrik Indomobil</h2>
-            </div>
-
-            <div class="space-y-4">
-                <!-- FAQ 1 -->
-                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
-                    <button onclick="toggleFaq(1)" class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center text-sm sm:text-base">
-                        <span>Berapa harga resmi masing-masing tipe motor listrik Indomobil?</span>
-                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
-                    </button>
-                    <div id="faq-ans-1" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-3">
-                        Harga resmi dealer kami di Sragen adalah: <strong>QT (Rp 15.350.000)</strong>, <strong>QT Pro (Rp 19.150.000)</strong>, <strong>Adora Basic (Rp 25.300.000)</strong>, <strong>Adora Livery Vibe (Rp 25.500.000)</strong>, <strong>Sprinto (Rp 26.100.000)</strong>, <strong>Tyranno (Rp 27.100.000)</strong>, dan <strong>Tyranno X (Coming Soon)</strong>. Hubungi Galih Pratignyo untuk info promo dan bonusnya.
-                    </div>
-                </div>
-
-                <!-- FAQ 2 -->
-                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
-                    <button onclick="toggleFaq(2)" class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center text-sm sm:text-base">
-                        <span>Apakah bisa pembelian secara Kredit?</span>
-                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
-                    </button>
-                    <div id="faq-ans-2" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-3">
-                        Tentu bisa! Kami bekerjasama dengan leasing resmi Indomobil Finance (IMFI). Tersedia pilihan DP ringan mulai Rp 1,6 Juta dan pilihan tenor fleksibel hingga 35 bulan. Mas Galih siap membantu seluruh proses pemberkasan hingga di-approve.
-                    </div>
-                </div>
-
-                <!-- FAQ 3 -->
-                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
-                    <button onclick="toggleFaq(3)" class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center text-sm sm:text-base">
-                        <span>Kapan dealer buka untuk kunjungan dan Test Ride?</span>
-                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-slate-400 transition"></i>
-                    </button>
-                    <div id="faq-ans-3" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-3">
-                        Dealer buka setiap hari <strong>Senin s/d Jumat (08.30 - 16.30 WIB)</strong> dan <strong>Sabtu (08.30 - 15.00 WIB)</strong>. Hari Minggu dan tanggal merah libur. Anda bisa datang langsung atau membuat janji via WhatsApp.
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="md:col-span-2 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="h-10 w-auto flex items-center justify-center p-1 bg-white rounded-lg">
-                            <img src="1001143440.jpg" alt="Logo Indomobil E-Motor" class="h-8 w-auto object-contain">
-                        </div>
-                        <span class="font-extrabold text-xl text-white">Indomobil E-Motor Sragen</span>
-                    </div>
-                    <p class="text-xs text-slate-400 leading-relaxed max-w-md">
-                        Dealer resmi kendaraan listrik Indomobil di Wilayah Sragen dan sekitarnya. Melayani penjualan Cash, Kredit IMFI, Service, dan Test Ride.
-                    </p>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-white text-sm mb-3">Model Motor</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#katalog" class="hover:text-white transition">Indomobil QT (Rp 15.350.000)</a></li>
-                        <li><a href="#katalog" class="hover:text-white transition">Indomobil QT Pro (Rp 19.150.000)</a></li>
-                        <li><a href="#katalog" class="hover:text-white transition">Indomobil Adora Basic (Rp 25.300.000)</a></li>
-                        <li><a href="#katalog" class="hover:text-white transition">Indomobil Adora Livery Vibe (Rp 25.500.000)</a></li>
-                        <li><a href="#katalog" class="hover:text-white transition">Indomobil Sprinto (Rp 26.100.000)</a></li>
-                        <li><a href="#katalog" class="hover:text-white transition">Indomobil Tyranno (Rp 27.100.000)</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-white text-sm mb-3">Kontak Dealer</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-user-tie text-brand-500"></i> Galih Pratignyo
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fa-brands fa-whatsapp text-emerald-400"></i> 0857-4012-1640
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-location-dot text-rose-400"></i> Maps: TkbtiaUciyUmDVzB8
-                        </li>
-                    </ul>
-                </div>
+    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 text-xs text-center sm:text-left">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <p class="font-bold text-white">&copy; 2026 Dealer Resmi Indomobil E-Motor Sragen.</p>
+                <p class="mt-1">Layanan Sales & Informasi Unit oleh <strong>Galih Pratignyo (0857-4012-1640)</strong>.</p>
             </div>
-
-            <div class="pt-8 border-t border-slate-900 text-center text-xs text-slate-600">
-                &copy; 2026 Dealer Resmi Indomobil E-Motor Sragen. All Rights Reserved. Sales Consultant: Galih Pratignyo. Partner Financing: IMFI (Indomobil Finance).
+            <div class="flex gap-4">
+                <a href="tel:085740121640" class="hover:text-emerald-400 transition"><i class="fa-solid fa-phone"></i> 085740121640</a>
+                <a href="https://maps.app.goo.gl/TkbtiaUciyUmDVzB8" target="_blank" class="hover:text-amber-400 transition"><i class="fa-solid fa-location-dot"></i> Maps Dealer</a>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/6285740121640?text=Halo%20Mas%20Galih%20Pratignyo,%20saya%20tertarik%20tanya%20unit%20Indomobil%20E-Motor%20Sragen" 
-       target="_blank"
-       aria-label="Chat WhatsApp Galih Pratignyo"
-       class="fixed bottom-20 md:bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center pulse-effect transition transform hover:scale-110">
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-    </a>
-
-    <!-- Mobile Fixed Bottom Action Bar -->
-    <div class="fixed bottom-0 left-0 right-0 z-40 bg-slate-900 border-t border-slate-800 p-3 md:hidden flex items-center gap-3 shadow-2xl">
-        <a href="#simulasi-kredit" class="flex-1 bg-amber-500 hover:bg-amber-600 text-slate-950 font-black py-3 rounded-xl text-center text-xs flex items-center justify-center gap-1.5">
-            <i class="fa-solid fa-calculator"></i> Hitung Kredit
+    <!-- Fixed Bottom Mobile Navigation Bar -->
+    <div class="md:hidden fixed bottom-0 inset-x-0 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 z-50 py-2 px-4 flex justify-between items-center shadow-2xl">
+        <a href="tel:085740121640" class="flex-1 text-center py-2 text-white font-bold text-xs flex flex-col items-center justify-center gap-1 border-r border-slate-800">
+            <i class="fa-solid fa-phone text-amber-400 text-base"></i>
+            <span>Telepon</span>
         </a>
-        <a href="https://wa.me/6285740121640?text=Halo%20Mas%20Galih,%20saya%20tertarik%20dengan%20Indomobil%20E-Motor%20Sragen" 
-           target="_blank" 
-           class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-center text-xs flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/30">
-            <i class="fa-brands fa-whatsapp text-base"></i> WA Sales Galih
+        <a href="#simulasi-kredit" class="flex-1 text-center py-2 text-white font-bold text-xs flex flex-col items-center justify-center gap-1 border-r border-slate-800">
+            <i class="fa-solid fa-calculator text-emerald-400 text-base"></i>
+            <span>Simulasi</span>
+        </a>
+        <a href="https://wa.me/6285740121640?text=Halo%20Mas%20Galih,%20saya%20ingin%20tanya%20promo%20Indomobil%20E-Motor" target="_blank" class="flex-[1.5] py-2 bg-emerald-500 text-white font-extrabold text-xs rounded-xl flex items-center justify-center gap-1.5 ml-2 shadow-lg">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Chat Galih</span>
         </a>
     </div>
 
-    <!-- Toast Notification Modal -->
-    <div id="toast" class="fixed top-5 right-5 z-50 hidden bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl text-xs flex items-center gap-3 border border-slate-700">
-        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
-        <span id="toast-msg">Tautan lokasi telah disalin!</span>
-    </div>
-
-    <!-- Full Image Lightbox Modal -->
-    <div id="image-modal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4" onclick="closeImageModal()">
-        <div class="relative max-w-lg w-full bg-slate-900 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl" onclick="event.stopPropagation()">
-            <div class="p-4 bg-slate-950 text-white flex justify-between items-center border-b border-slate-800">
-                <span id="modal-image-title" class="font-bold text-sm text-amber-400">Poster Produk</span>
-                <button onclick="closeImageModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center text-sm">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="p-2 max-h-[75vh] overflow-y-auto flex items-center justify-center bg-black">
-                <img id="modal-image-src" src="" alt="Poster Full" class="max-h-[70vh] w-auto object-contain rounded-xl">
-            </div>
-            <div class="p-4 bg-slate-900 flex justify-between items-center">
-                <span class="text-xs text-slate-400">Dealer Resmi Indomobil Sragen</span>
-                <a href="https://wa.me/6285740121640?text=Halo%20Mas%20Galih,%20saya%20ingin%20tanya%20detail%20unit%20ini" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-4 py-2 rounded-xl flex items-center gap-1.5">
-                    <i class="fa-brands fa-whatsapp"></i> Chat Galih
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Syarat Kredit -->
-    <div id="modal-syarat" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4" onclick="document.getElementById('modal-syarat').classList.add('hidden')">
-        <div class="relative max-w-xl w-full bg-slate-900 text-white rounded-3xl overflow-hidden border border-slate-700 shadow-2xl p-6" onclick="event.stopPropagation()">
-            <div class="flex justify-between items-center pb-4 border-b border-slate-800 mb-4">
-                <h3 class="font-extrabold text-lg text-amber-400 flex items-center gap-2">
-                    <i class="fa-solid fa-file-signature"></i> Persyaratan Pengajuan Kredit IMFI
-                </h3>
-                <button onclick="document.getElementById('modal-syarat').classList.add('hidden')" class="w-8 h-8 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center text-sm">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <div class="space-y-4 text-xs">
-                <div class="p-4 bg-slate-950 rounded-2xl border border-slate-800">
-                    <h4 class="font-bold text-emerald-400 mb-2 text-sm">Persyaratan Karyawan / Wiraswasta:</h4>
-                    <ol class="list-decimal pl-5 space-y-1.5 text-slate-300">
-                        <li>FC KTP Suami/Istri + SIM C + Kartu Keluarga</li>
-                        <li>FC Slip Gaji / Ket. Penghasilan (Karyawan)</li>
-                        <li>FC SIUP / SKU & Nota-nota Transaksi (Wiraswasta)</li>
-                        <li>FC Tabungan / Rek. Koran 3 Bulan Terakhir</li>
-                        <li>FC PBB & Rekening Listrik / Telepon</li>
-                    </ol>
-                </div>
-
-                <div class="p-4 bg-slate-950 rounded-2xl border border-slate-800">
-                    <h4 class="font-bold text-blue-400 mb-2 text-sm">Persyaratan Perusahaan:</h4>
-                    <ol class="list-decimal pl-5 space-y-1.5 text-slate-300">
-                        <li>FC KTP Pejabat / Pengurus Perusahaan</li>
-                        <li>FC Akte Pendirian Perusahaan</li>
-                        <li>FC Pengesahan Akte dari Dep. Kehakiman</li>
-                        <li>FC SIUP, TDP, NPWP & Domisili Usaha</li>
-                        <li>FC Rekening Koran 3 Bulan Terakhir</li>
-                    </ol>
-                </div>
-            </div>
-
-            <div class="mt-6 text-right">
-                <button onclick="document.getElementById('modal-syarat').classList.add('hidden')" class="bg-amber-400 text-slate-950 font-extrabold px-6 py-2.5 rounded-xl text-xs">
-                    Tutup Informasi
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- DATA & LOGIC CALCULATOR -->
+    <!-- Script Logika Simulasi Kredit Interaktif -->
     <script>
-        // OFFICIAL PRICE LIST DATA FROM IMFI TABLE (Mei 2026)
+        // Data Pricelist IMFI Resmi Mei 2026
         const creditData = {
-            'qt': {
-                name: 'Indomobil QT',
+            qt: {
+                name: "Indomobil QT",
                 otr: 15350000,
-                rates: [
-                    { dp: 1600000, t11: 1659000, t17: 1170000, t23: 909000, t29: 764000, t35: 674000 },
-                    { dp: 1900000, t11: 1629000, t17: 1148000, t23: 893000, t29: 750000, t35: 661000 },
-                    { dp: 2200000, t11: 1598000, t17: 1127000, t23: 876000, t29: 737000, t35: 649000 },
-                    { dp: 3100000, t11: 1508000, t17: 1060000, t23: 826000, t29: 696000, t35: 612000 },
-                    { dp: 3900000, t11: 1429000, t17: 1009000, t23: 789000, t29: 666000, t35: 583000 },
-                    { dp: 4700000, t11: 1357000, t17: 958000,  t23: 755000, t29: 639000, t35: 562000 },
-                    { dp: 6200000, t11: 1208000, t17: 853000,  t23: 677000, t29: 574000, t35: 504000 }
+                dpList: [
+                    { dp: 1600000, t11: 1618000, t17: 1146000, t23: 914000, t29: 775000, t35: 674000 },
+                    { dp: 2000000, t11: 1572000, t17: 1114000, t23: 888000, t29: 753000, t35: 655000 },
+                    { dp: 2500000, t11: 1515000, t17: 1073000, t23: 856000, t29: 726000, t35: 631000 },
+                    { dp: 3000000, t11: 1458000, t17: 1033000, t23: 824000, t29: 699000, t35: 608000 }
                 ]
             },
-            'qt_pro': {
-                name: 'Indomobil QT Pro',
+            qt_pro: {
+                name: "Indomobil QT Pro",
                 otr: 19150000,
-                rates: [
-                    { dp: 2000000, t11: 2010000, t17: 1418000, t23: 1101000, t29: 925000, t35: 815000 },
-                    { dp: 2300000, t11: 1980000, t17: 1396000, t23: 1084000, t29: 911000, t35: 802000 },
-                    { dp: 2700000, t11: 1939000, t17: 1367000, t23: 1062000, t29: 893000, t35: 786000 },
-                    { dp: 3900000, t11: 1818000, t17: 1278000, t23: 995000,  t29: 838000, t35: 736000 },
-                    { dp: 4800000, t11: 1730000, t17: 1222000, t23: 954000,  t29: 805000, t35: 704000 },
-                    { dp: 5800000, t11: 1639000, t17: 1158000, t23: 911000,  t29: 771000, t35: 677000 },
-                    { dp: 7700000, t11: 1451000, t17: 1024000, t23: 811000,  t29: 689000, t35: 603000 }
+                dpList: [
+                    { dp: 2000000, t11: 2018000, t17: 1429000, t23: 1139000, t29: 966000, t35: 841000 },
+                    { dp: 2500000, t11: 1961000, t17: 1389000, t23: 1107000, t29: 939000, t35: 817000 },
+                    { dp: 3000000, t11: 1904000, t17: 1348000, t23: 1075000, t29: 912000, t35: 794000 },
+                    { dp: 3500000, t11: 1847000, t17: 1308000, t23: 1043000, t29: 885000, t35: 770000 }
                 ]
             },
-            'adora_basic': {
-                name: 'Indomobil Adora Basic',
+            adora_basic: {
+                name: "Indomobil Adora Basic",
                 otr: 25300000,
-                rates: [
-                    { dp: 2600000,  t11: 2561000, t17: 1774000, t23: 1393000, t29: 1167000, t35: 1004000 },
-                    { dp: 3100000,  t11: 2511000, t17: 1739000, t23: 1366000, t29: 1144000, t35: 984000 },
-                    { dp: 3600000,  t11: 2459000, t17: 1704000, t23: 1339000, t29: 1123000, t35: 965000 },
-                    { dp: 5100000,  t11: 2313000, t17: 1604000, t23: 1262000, t29: 1061000, t35: 911000 },
-                    { dp: 6400000,  t11: 2201000, t17: 1534000, t23: 1212000, t29: 1023000, t35: 883000 },
-                    { dp: 7600000,  t11: 2094000, t17: 1464000, t23: 1162000, t29: 984000,  t35: 852000 },
-                    { dp: 10200000, t11: 1835000, t17: 1287000, t23: 1025000, t29: 870000,  t35: 756000 }
+                dpList: [
+                    { dp: 2600000, t11: 2666000, t17: 1888000, t23: 1505000, t29: 1276000, t35: 1111000 },
+                    { dp: 3000000, t11: 2620000, t17: 1856000, t23: 1479000, t29: 1254000, t35: 1092000 },
+                    { dp: 3500000, t11: 2563000, t17: 1815000, t23: 1447000, t29: 1227000, t35: 1068000 },
+                    { dp: 4000000, t11: 2506000, t17: 1775000, t23: 1415000, t29: 1200000, t35: 1044000 }
                 ]
             },
-            'adora_livery': {
-                name: 'Indomobil Adora Livery Vibe',
+            adora_livery: {
+                name: "Indomobil Adora Livery Vibe",
                 otr: 25500000,
-                rates: [
-                    { dp: 2600000,  t11: 2581000, t17: 1788000, t23: 1405000, t29: 1177000, t35: 1013000 },
-                    { dp: 3100000,  t11: 2531000, t17: 1753000, t23: 1378000, t29: 1154000, t35: 992000 },
-                    { dp: 3600000,  t11: 2480000, t17: 1718000, t23: 1350000, t29: 1132000, t35: 973000 },
-                    { dp: 5100000,  t11: 2334000, t17: 1619000, t23: 1273000, t29: 1070000, t35: 919000 },
-                    { dp: 6400000,  t11: 2222000, t17: 1548000, t23: 1224000, t29: 1033000, t35: 891000 },
-                    { dp: 7700000,  t11: 2105000, t17: 1472000, t23: 1168000, t29: 989000,  t35: 856000 },
-                    { dp: 10200000, t11: 1856000, t17: 1302000, t23: 1036000, t29: 880000,  t35: 765000 }
+                dpList: [
+                    { dp: 2600000, t11: 2690000, t17: 1905000, t23: 1518000, t29: 1287000, t35: 1121000 },
+                    { dp: 3000000, t11: 2644000, t17: 1872000, t23: 1492000, t29: 1265000, t35: 1102000 },
+                    { dp: 3500000, t11: 2587000, t17: 1832000, t23: 1460000, t29: 1238000, t35: 1078000 },
+                    { dp: 4000000, t11: 2530000, t17: 1792000, t23: 1428000, t29: 1211000, t35: 1054000 }
                 ]
             },
-            'tyranno': {
-                name: 'Indomobil Tyranno',
-                otr: 27100000,
-                rates: [
-                    { dp: 2800000,  t11: 2748000, t17: 1938000, t23: 1503000, t29: 1263000, t35: 1111000 },
-                    { dp: 3300000,  t11: 2698000, t17: 1902000, t23: 1475000, t29: 1239000, t35: 1090000 },
-                    { dp: 3800000,  t11: 2646000, t17: 1866000, t23: 1447000, t29: 1217000, t35: 1070000 },
-                    { dp: 5500000,  t11: 2475000, t17: 1740000, t23: 1353000, t29: 1139000, t35: 1000000 },
-                    { dp: 6800000,  t11: 2347000, t17: 1658000, t23: 1292000, t29: 1091000, t35: 953000 },
-                    { dp: 8200000,  t11: 2220000, t17: 1568000, t23: 1231000, t29: 1043000, t35: 914000 },
-                    { dp: 10900000, t11: 1951000, t17: 1378000, t23: 1089000, t29: 925000,  t35: 809000 }
-                ]
-            },
-            'sprinto': {
-                name: 'Indomobil Sprinto',
+            sprinto: {
+                name: "Indomobil Sprinto",
                 otr: 26100000,
-                rates: [
-                    { dp: 2700000,  t11: 2655000, t17: 1872000, t23: 1452000, t29: 1220000, t35: 1074000 },
-                    { dp: 3200000,  t11: 2605000, t17: 1836000, t23: 1425000, t29: 1197000, t35: 1052000 },
-                    { dp: 3700000,  t11: 2553000, t17: 1800000, t23: 1397000, t29: 1175000, t35: 1033000 },
-                    { dp: 5300000,  t11: 2392000, t17: 1682000, t23: 1308000, t29: 1101000, t35: 967000 },
-                    { dp: 6600000,  t11: 2264000, t17: 1599000, t23: 1247000, t29: 1052000, t35: 920000 },
-                    { dp: 7900000,  t11: 2146000, t17: 1516000, t23: 1191000, t29: 1008000, t35: 884000 },
-                    { dp: 10500000, t11: 1888000, t17: 1333000, t23: 1054000, t29: 895000,  t35: 783000 }
+                dpList: [
+                    { dp: 2700000, t11: 2750000, t17: 1947000, t23: 1552000, t29: 1316000, t35: 1146000 },
+                    { dp: 3200000, t11: 2693000, t17: 1907000, t23: 1520000, t29: 1289000, t35: 1122000 },
+                    { dp: 3700000, t11: 2636000, t17: 1867000, t23: 1488000, t29: 1262000, t35: 1098000 },
+                    { dp: 4200000, t11: 2579000, t17: 1826000, t23: 1456000, t29: 1235000, t35: 1075000 }
+                ]
+            },
+            tyranno: {
+                name: "Indomobil Tyranno",
+                otr: 27100000,
+                dpList: [
+                    { dp: 2800000, t11: 2855000, t17: 2022000, t23: 1612000, t29: 1367000, t35: 1190000 },
+                    { dp: 3300000, t11: 2798000, t17: 1981000, t23: 1580000, t29: 1340000, t35: 1166000 },
+                    { dp: 3800000, t11: 2741000, t17: 1941000, t23: 1548000, t29: 1313000, t35: 1142000 },
+                    { dp: 4300000, t11: 2684000, t17: 1901000, t23: 1516000, t29: 1286000, t35: 1119000 }
                 ]
             }
         };
 
-        let currentSelectedTenor = 't35';
+        let currentTenor = 't35';
 
         function formatRupiah(num) {
-            return 'Rp ' + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            return 'Rp ' + num.toLocaleString('id-ID');
         }
 
-        function setTenor(tenorKey) {
-            currentSelectedTenor = tenorKey;
-            document.querySelectorAll('.tenor-btn').forEach(btn => {
-                btn.className = 'tenor-btn py-2.5 px-2 rounded-xl border border-slate-700 bg-slate-900 text-xs font-bold text-slate-300 hover:border-amber-400 transition';
-            });
-            const activeBtn = document.getElementById(`btn-tenor-${tenorKey}`);
-            if(activeBtn) {
-                activeBtn.className = 'tenor-btn py-2.5 px-2 rounded-xl border border-amber-400 bg-amber-400/20 text-xs font-black text-amber-300';
-            }
-            calculateCredit();
-        }
-
-        function updateCalculatorDP(targetDpVal = null) {
+        function updateCalculatorDP() {
             const modelKey = document.getElementById('calc-model').value;
+            const modelData = creditData[modelKey];
             const dpSelect = document.getElementById('calc-dp');
+
             dpSelect.innerHTML = '';
-            
-            if(!creditData[modelKey]) return;
-            
-            const rates = creditData[modelKey].rates;
-            rates.forEach((rate, idx) => {
+            modelData.dpList.forEach((item, index) => {
                 const opt = document.createElement('option');
-                opt.value = rate.dp;
-                opt.innerText = `${formatRupiah(rate.dp)} ${idx === 0 ? '(DP Minimum)' : ''}`;
+                opt.value = index;
+                opt.textContent = `${formatRupiah(item.dp)} (DP ${(item.dp / modelData.otr * 100).toFixed(0)}%)`;
                 dpSelect.appendChild(opt);
             });
 
-            if(targetDpVal) {
-                dpSelect.value = targetDpVal;
+            calculateCredit();
+        }
+
+        function setTenor(tenorKey) {
+            currentTenor = tenorKey;
+            
+            // Reset active styles
+            document.querySelectorAll('.tenor-btn').forEach(btn => {
+                btn.className = 'tenor-btn py-2.5 px-2 rounded-xl border border-slate-700 bg-slate-900 text-xs font-bold text-slate-300 hover:border-amber-400 transition';
+            });
+
+            // Set active style on selected
+            const activeBtn = document.getElementById(`btn-tenor-${tenorKey}`);
+            if (activeBtn) {
+                activeBtn.className = 'tenor-btn py-2.5 px-2 rounded-xl border border-amber-400 bg-amber-400/20 text-xs font-black text-amber-300';
             }
 
             calculateCredit();
@@ -1565,126 +1233,83 @@
 
         function calculateCredit() {
             const modelKey = document.getElementById('calc-model').value;
-            const dpVal = parseInt(document.getElementById('calc-dp').value);
-            const modelObj = creditData[modelKey];
-            if(!modelObj) return;
+            const dpIndex = document.getElementById('calc-dp').value || 0;
+            const modelData = creditData[modelKey];
+            const selectedDP = modelData.dpList[dpIndex];
 
-            const rateObj = modelObj.rates.find(r => r.dp === dpVal) || modelObj.rates[0];
-            const installment = rateObj[currentSelectedTenor];
-            const tenorNum = currentSelectedTenor.replace('t', '');
+            const installment = selectedDP[currentTenor];
+            const tenorCount = currentTenor.replace('t', '');
 
-            // Update Result UI Elements
-            document.getElementById('calc-res-model').innerText = modelObj.name;
-            document.getElementById('calc-res-otr').innerText = formatRupiah(modelObj.otr);
-            document.getElementById('calc-res-dp').innerText = formatRupiah(rateObj.dp);
-            document.getElementById('calc-res-tenor').innerText = tenorNum + ' Bulan';
-            document.getElementById('calc-res-installment').innerText = formatRupiah(installment);
+            document.getElementById('calc-res-model').textContent = modelData.name;
+            document.getElementById('calc-res-otr').textContent = formatRupiah(modelData.otr);
+            document.getElementById('calc-res-dp').textContent = formatRupiah(selectedDP.dp);
+            document.getElementById('calc-res-tenor').textContent = `${tenorCount} Bulan`;
+            document.getElementById('calc-res-installment').textContent = formatRupiah(installment);
 
-            // Generate WhatsApp Link
-            const textWa = `*HALO MAS GALIH (SALES INDOMOBIL E-MOTOR SRAGEN)*%0A` +
-                           `Saya ingin mengajukan kredit motor listrik:%0A%0A` +
-                           `• *Model*: ${encodeURIComponent(modelObj.name)}%0A` +
-                           `• *Harga OTR*: ${encodeURIComponent(formatRupiah(modelObj.otr))}%0A` +
-                           `• *DP (Uang Muka)*: ${encodeURIComponent(formatRupiah(rateObj.dp))}%0A` +
-                           `• *Tenor*: ${encodeURIComponent(tenorNum)} Bulan%0A` +
-                           `• *Angsuran*: ${encodeURIComponent(formatRupiah(installment))}/Bulan (IMFI)%0A%0A` +
-                           `Mohon info kelengkapan berkas dan bantuan proses surveinya. Terima kasih!`;
-
-            document.getElementById('calc-wa-btn').href = `https://wa.me/6285740121640?text=${textWa}`;
-        }
-
-        function selectModelToCalc(modelKey, targetDp = null, tenorKey = null) {
-            const modelSelect = document.getElementById('calc-model');
-            if(modelSelect) {
-                modelSelect.value = modelKey;
-                updateCalculatorDP(targetDp);
-                if(tenorKey) {
-                    setTenor(tenorKey);
-                }
-                document.getElementById('simulasi-kredit').scrollIntoView({ behavior: 'smooth' });
-            }
+            // Update WA Link
+            const waText = encodeURIComponent(
+                `Halo Mas Galih Pratignyo, saya berminat dengan Simulasi Kredit IMFI Sragen:\n\n` +
+                `• Unit: ${modelData.name}\n` +
+                `• OTR: ${formatRupiah(modelData.otr)}\n` +
+                `• DP: ${formatRupiah(selectedDP.dp)}\n` +
+                `• Tenor: ${tenorCount} Bulan\n` +
+                `• Est. Angsuran: ${formatRupiah(installment)}/bln\n\n` +
+                `Mohon bantu proses kelengkapan berkas dan surveynya.`
+            );
+            document.getElementById('calc-wa-btn').href = `https://wa.me/6285740121640?text=${waText}`;
         }
 
         function renderPricelistTable() {
-            const tableBody = document.getElementById('pricelist-table-body');
-            const filterVal = document.getElementById('table-filter-model').value;
-            tableBody.innerHTML = '';
+            const selectedModelKey = document.getElementById('calc-model').value;
+            const tbody = document.getElementById('pricelist-table-body');
+            const container = document.getElementById('pricelist-container');
+            
+            tbody.innerHTML = '';
+            container.classList.remove('hidden');
 
-            let keysToRender = Object.keys(creditData);
-            if(filterVal !== 'all' && creditData[filterVal]) {
-                keysToRender = [filterVal];
-            }
+            Object.keys(creditData).forEach(modelKey => {
+                if (modelKey !== selectedModelKey) return;
 
-            keysToRender.forEach(key => {
-                const item = creditData[key];
-                item.rates.forEach((r, idx) => {
-                    const row = document.createElement('tr');
-                    row.className = 'hover:bg-slate-900/80 transition cursor-pointer';
-                    row.onclick = () => selectModelToCalc(key, r.dp);
+                const item = creditData[modelKey];
+                item.dpList.forEach((dpRow, dpIdx) => {
+                    const tr = document.createElement('tr');
+                    tr.className = "hover:bg-slate-900/80 transition cursor-pointer";
+                    tr.onclick = function() {
+                        document.getElementById('calc-model').value = modelKey;
+                        updateCalculatorDP();
+                        document.getElementById('calc-dp').value = dpIdx;
+                        calculateCredit();
+                        window.location.hash = 'simulasi-kredit';
+                    };
 
-                    row.innerHTML = `
-                        <td class="p-3 font-bold text-white">${idx === 0 ? item.name : ''}</td>
-                        <td class="p-3 text-slate-400">${idx === 0 ? formatRupiah(item.otr) : ''}</td>
-                        <td class="p-3 font-extrabold text-amber-400">${formatRupiah(r.dp)}</td>
-                        <td class="p-3">${formatRupiah(r.t11)}</td>
-                        <td class="p-3">${formatRupiah(r.t17)}</td>
-                        <td class="p-3">${formatRupiah(r.t23)}</td>
-                        <td class="p-3">${formatRupiah(r.t29)}</td>
-                        <td class="p-3 font-black text-amber-300 bg-amber-400/5">${formatRupiah(r.t35)}</td>
+                    tr.innerHTML = `
+                        <td class="p-3 font-bold text-white">${dpIdx === 0 ? item.name : ''}</td>
+                        <td class="p-3 text-slate-400">${dpIdx === 0 ? formatRupiah(item.otr) : ''}</td>
+                        <td class="p-3 font-extrabold text-emerald-400">${formatRupiah(dpRow.dp)}</td>
+                        <td class="p-3 text-slate-300">${formatRupiah(dpRow.t11)}</td>
+                        <td class="p-3 text-slate-300">${formatRupiah(dpRow.t17)}</td>
+                        <td class="p-3 text-slate-300">${formatRupiah(dpRow.t23)}</td>
+                        <td class="p-3 text-slate-300">${formatRupiah(dpRow.t29)}</td>
+                        <td class="p-3 font-extrabold text-amber-300 bg-amber-400/5">${formatRupiah(dpRow.t35)}</td>
                         <td class="p-3 text-center">
-                            <button onclick="event.stopPropagation(); selectModelToCalc('${key}', ${r.dp});" class="px-2.5 py-1 bg-amber-400/20 hover:bg-amber-400 text-amber-300 hover:text-slate-950 font-bold text-[10px] rounded-lg transition">
-                                Pilih
+                            <button class="px-2.5 py-1 bg-amber-500/20 hover:bg-amber-500 hover:text-slate-950 text-amber-300 font-bold rounded-lg text-[10px] transition">
+                                Pilih DP
                             </button>
                         </td>
                     `;
-                    tableBody.appendChild(row);
+                    tbody.appendChild(tr);
                 });
             });
         }
 
-        // Initialize Calculator & Table on Load
-        window.addEventListener('DOMContentLoaded', () => {
+        function selectModelToCalc(modelKey) {
+            document.getElementById('calc-model').value = modelKey;
             updateCalculatorDP();
             renderPricelistTable();
-        });
-
-        // Hero Poster Switcher
-        function switchHeroPoster(src, title) {
-            const heroImg = document.getElementById('hero-poster-img');
-            const heroTitle = document.getElementById('hero-poster-title');
-            heroImg.style.opacity = '0';
-            setTimeout(() => {
-                heroImg.src = src;
-                heroTitle.innerText = title;
-                heroImg.style.opacity = '1';
-            }, 200);
-
-            // Update border highlights
-            document.querySelectorAll('.thumbnail-btn').forEach(img => {
-                img.classList.remove('border-amber-400');
-                img.classList.add('border-transparent');
-                if(img.src.includes(src)) {
-                    img.classList.add('border-amber-400');
-                    img.classList.remove('border-transparent');
-                }
-            });
+            window.location.hash = 'simulasi-kredit';
         }
 
-        // Image Lightbox Modal Handlers
-        function openImageModal(src, title) {
-            document.getElementById('modal-image-src').src = src;
-            document.getElementById('modal-image-title').innerText = title;
-            document.getElementById('image-modal').classList.remove('hidden');
-        }
-
-        function closeImageModal() {
-            document.getElementById('image-modal').classList.add('hidden');
-        }
-        
-        // Filter Catalog Function
         function filterCatalog(category) {
-            const cards = document.querySelectorAll('.motor-card');
-            
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.className = 'filter-btn px-4 py-2 text-xs font-bold rounded-xl bg-white text-slate-700 border border-slate-200 hover:bg-slate-100';
             });
@@ -1694,6 +1319,7 @@
                 activeBtn.className = 'filter-btn px-4 py-2 text-xs font-bold rounded-xl bg-brand-600 text-white shadow-md';
             }
 
+            const cards = document.querySelectorAll('.motor-card');
             cards.forEach(card => {
                 if (category === 'all' || card.classList.contains(category)) {
                     card.style.display = 'flex';
@@ -1703,73 +1329,34 @@
             });
         }
 
-        // Form Submission to WA Dispatcher
-        function handleFormSubmit(e) {
+        function switchHeroPoster(imgSrc, titleText) {
+            document.getElementById('hero-poster-img').src = imgSrc;
+            document.getElementById('hero-poster-title').innerText = titleText;
+        }
+
+        function submitFormToWA(e) {
             e.preventDefault();
             const name = document.getElementById('form-name').value;
-            const phone = document.getElementById('form-phone').value;
+            const address = document.getElementById('form-address').value;
             const model = document.getElementById('form-model').value;
-            const service = document.getElementById('form-service').value;
-            const notes = document.getElementById('form-notes').value || '-';
+            const type = document.getElementById('form-type').value;
 
-            const message = `*HALO MAS GALIH (SALES INDOMOBIL E-MOTOR SRAGEN)*%0A%0A` +
-                            `*Nama:* ${encodeURIComponent(name)}%0A` +
-                            `*WhatsApp:* ${encodeURIComponent(phone)}%0A` +
-                            `*Model Minat:* ${encodeURIComponent(model)}%0A` +
-                            `*Jenis Layanan:* ${encodeURIComponent(service)}%0A` +
-                            `*Catatan/Alamat:* ${encodeURIComponent(notes)}%0A%0A` +
-                            `*Lokasi Dealer Maps:* https://maps.app.goo.gl/TkbtiaUciyUmDVzB8`;
+            const text = encodeURIComponent(
+                `Halo Mas Galih Pratignyo, saya mengajukan pesanan via Website:\n\n` +
+                `• Nama: ${name}\n` +
+                `• Domisili: ${address}\n` +
+                `• Pilihan Motor: ${model}\n` +
+                `• Keperluan: ${type}\n\n` +
+                `Mohon dapat ditindaklanjuti. Terima kasih.`
+            );
 
-            const targetWaUrl = `https://wa.me/6285740121640?text=${message}`;
-            
-            showToast('Mengarahkan ke WhatsApp Mas Galih Pratignyo...');
-            setTimeout(() => {
-                window.open(targetWaUrl, '_blank');
-            }, 800);
+            window.open(`https://wa.me/6285740121640?text=${text}`, '_blank');
         }
 
-        // Copy Maps Link Handler
-        function copyMapsLink() {
-            const link = "https://maps.app.goo.gl/TkbtiaUciyUmDVzB8";
-            const tempInput = document.createElement("input");
-            tempInput.value = link;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-
-            const copyBtnText = document.getElementById('copy-btn-text');
-            copyBtnText.innerText = "Berhasil Disalin!";
-            showToast("Tautan Google Maps Dealer berhasil disalin!");
-
-            setTimeout(() => {
-                copyBtnText.innerText = "Salin Link Lokasi Dealer";
-            }, 3000);
-        }
-
-        // Toast Helper
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toast-msg').innerText = msg;
-            toast.classList.remove('hidden');
-            setTimeout(() => {
-                toast.classList.add('hidden');
-            }, 3500);
-        }
-
-        // FAQ Toggle Accordion
-        function toggleFaq(num) {
-            const ans = document.getElementById(`faq-ans-${num}`);
-            const icon = document.getElementById(`faq-icon-${num}`);
-
-            if (ans.classList.contains('hidden')) {
-                ans.classList.remove('hidden');
-                icon.classList.add('rotate-180');
-            } else {
-                ans.classList.add('hidden');
-                icon.classList.remove('rotate-180');
-            }
-        }
+        // Initialize on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            updateCalculatorDP();
+        });
     </script>
 </body>
 </html>
